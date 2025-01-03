@@ -1,0 +1,53 @@
+.contact_us {
+    position: relative;
+    text-align: center;
+    height: 40vw;
+    width: 100%;
+}
+
+.contact_us h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-weight: 700;
+    font-size: 7vw;
+}
+
+.contact_us img {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    width: 40%;
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    border: 0.3vw solid rgb(6, 0, 0);
+    border-radius: 4rem;
+    background-color: #f9f9f9;
+    font-size: 2vw;
+    padding: 1vw 2vw;
+    margin-bottom: 7vw;
+    margin-top: 3vw;
+    z-index: 3;
+    position: relative;
+}
+
+.btn:hover {
+    border: 0.3vw solid #060000;
+    background-color: #f9f9f9;
+    color: #FF6D0B;
+    font-weight: 700;
+}
+
+.btn:active {
+    border: 0.3vw solid #FF6D0B !important;
+    background-color: #f9f9f9 !important;
+    color: #FF6D0B !important;
+    font-weight: 700;
+}
+
+
