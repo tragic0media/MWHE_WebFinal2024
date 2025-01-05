@@ -56,19 +56,19 @@
                 
 
                  <!-- Título -->
-            <div class="text-center mb-5" >
-                <h2>Ash Torp</h2>
+            <div class="text-center mb-5 limit" >
+                <h2 class="nombre">Ash Torp</h2>
             </div>
             
             <!-- Descripción y Redes Sociales -->
             <div class="row mb-5 align-items-center">
                 <div class="col-md-6">
-                    <p data-aos="fade-up">
+                    <p class="bio">
                         Isabella Martínez fusiona fotografía y arte abstracto para crear composiciones únicas y emocionales. Su obra ha sido presentada en prestigiosas galerías de arte.
                     </p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <div class="social-icons" data-aos="fade-up">
+                    <div class="social-icons">
                         <a href="#" class="text-dark mx-2"><i class="fab fa-facebook fa-2x"></i></a>
                         <a href="#" class="text-dark mx-2"><i class="fab fa-instagram fa-2x"></i></a>
                         <a href="#" class="text-dark mx-2"><i class="fab fa-twitter fa-2x"></i></a>
@@ -94,7 +94,7 @@
 </section>
 
 <!-- SECCIÓN GALERÍA MULTIMEDIA -->
-<section class="dynamic-gallery" data-scroll-section data-aos="fade-up">
+<section class="dynamic-gallery" data-scroll-section>
     <div class="gallery-grid">
         <!-- Item Horizontal Destacado -->
         <div class="gallery-item horizontal medium">
@@ -106,7 +106,7 @@
         </div>
         
         <!-- Item Vertical Destacado -->
-        <div class="gallery-item vertical medium" data-aos="fade-up">
+        <div class="gallery-item vertical medium">
             <video autoplay muted loop playsinline>
                 <source src="images\artist1\Sin título-3.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
@@ -115,32 +115,32 @@
         </div>
 
         <!-- Item Cuadrado -->
-        <div class="gallery-item square" data-aos="fade-up">
+        <div class="gallery-item square">
             <img src="images\artist1\Sin título-2.png" alt="Imagen Cuadrada">
             <div class="gallery-text">Arte Abstracto</div>
         </div>
 
 
         <!-- Item Horizontal -->
-        <div class="gallery-item horizontal" data-aos="fade-up">
+        <div class="gallery-item horizontal">
             <img src="images\artist1\Sin título-1.png" alt="Imagen Horizontal">
             <div class="gallery-text">Arte Abstracto</div>
         </div>
 
         <!-- Item Vertical -->
-        <div class="gallery-item vertical" data-aos="fade-up">
+        <div class="gallery-item vertical">
             <img src="images\artist1\Sin título-3.png" alt="Imagen Vertical">
             <div class="gallery-text">Arte Abstracto</div>
         </div>
 
         <!-- Item Cuadrado -->
-        <div class="gallery-item square" data-aos="fade-up">
+        <div class="gallery-item square">
             <img src="https://source.unsplash.com/400x400/?creative,pattern" alt="Imagen Cuadrada">
             <div class="gallery-text">Arte Abstracto</div>
         </div>
 
         <!-- Item Horizontal Destacado -->
-        <div class="gallery-item horizontal medium byn" data-aos="fade-up">
+        <div class="gallery-item horizontal medium byn">
             <video autoplay muted loop playsinline>
                 <source src="images\artist1\CHIMERA-V1.1_1.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
@@ -149,7 +149,7 @@
         </div>
 
         <!-- Item Vertical -->
-        <div class="gallery-item vertical byn" data-aos="fade-up">
+        <div class="gallery-item vertical byn">
             <video autoplay muted loop playsinline>
                 <source src="images\artist1\Sin título-3.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
@@ -158,7 +158,7 @@
         </div>
 
         <!-- Item Cuadrado -->
-        <div class="gallery-item square" data-aos="fade-up">
+        <div class="gallery-item square">
             <img src="https://source.unsplash.com/400x400/?technology,futuristic" alt="Imagen Cuadrada">
             <div class="gallery-text">Arte Abstracto</div>
         </div>
@@ -225,6 +225,103 @@
         <!-- Librería Lenis.js -->
         <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready( function() {
+    
+                $(".gallery-item").on("mouseenter", function() {
+            $(this).css({
+                "transform": "translateY(-3px) scale(1.03)",
+                "box-shadow": "0 8px 20px rgba(0, 0, 0, 0.4)"
+            });
+            });
+
+            $(".gallery-item").on("mouseleave", function() {
+                $(this).css({
+                    "transform": "",
+                    "box-shadow": ""
+                });
+            });
+        } ); 
+        </script>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        gsap.registerPlugin(ScrollTrigger);
+
+        $(".nombre, .bio").html(function(_, html) {
+                return html.split("").map(letter => letter === " " ? " " : `<span>${letter}</span>`).join("");
+            });
+
+        let tl = gsap.timeline();
+
+        tl.fromTo(".nombre span", {opacity: 0, x: -550, y: 500, rotate: 90, scale: 0.1 },{
+            x: 0,
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+            transformOrigin: "top left",
+            duration: 1.2,
+            ease: "elastic.easeOut(0.25)",
+            stagger: 0.05
+            })
+          .fromTo(".bio span", { opacity: 0, y: 20, scale: 1.7, filter: "blur(6px)" },{
+            y: 0,
+            scale: 1,
+            opacity: 1,
+            rotate: 0,
+            filter: "blur(0px)",
+            duration: 0.4,
+            ease: "power4.inOut",
+            stagger: 0.02
+            }, "+=0.3")
+           .fromTo(".social-icons a", { opacity: 0, y: 20, scale: 1.7, filter: "blur(6px)" },{
+            y: 0,
+            scale: 1,
+            opacity: 1,
+            rotate: 0,
+            filter: "blur(0px)",
+            duration: 0.5,
+            ease: "power2.inOut",
+            stagger: {
+                each: 0.2,
+                grid: [1, 4],
+                from: "random",
+            } }, "+=0.2");
+
+        gsap.from(".video-container", { z: -510, rotationX: 75, y: -100, transformOrigin: "bottom bottom", scrollTrigger: {
+                trigger: ".video-container", scrub: 2, start: "top bottom", end: "bottom 90%", once: true, ease: "power2.inOut" }} );
+          
+
+        gsap.fromTo(
+            ".gallery-item",
+            { scale: 0.2, filter: "blur(4px)", rotateZ: "-5deg"},
+            {
+            scale: 1,
+            filter: "blur(0px)",
+            rotateZ: "0deg",
+            ease: "power3.inOut",
+            duration: 1.15,
+            stagger: {
+                each: 0.8,
+                grid: [1, 4],
+                from: "random",
+            },
+            scrollTrigger: {
+                trigger: ".gallery-item",
+                scrub: false,
+                start: "top 95%",
+                end: "top center",
+                markers: true,
+                toggleActions: "play none none none"
+            }
+            }
+        );
+        });
+        </script>
+
         <!-- Librería Particles.js -->
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
@@ -265,13 +362,5 @@
                 retina_detect: true
             });
         </script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        
-        <script>
-          AOS.init();
-        </script>
-
-
-
     </body>
 </html>
