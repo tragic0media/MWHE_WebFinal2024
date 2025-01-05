@@ -18,7 +18,6 @@ a {
 a:hover {
     text-decoration: none;
     color:#FF6D0B;
-    text-decoration: underline;
 }
 
 /* -- BACKGROUND -- */
@@ -65,15 +64,15 @@ a:hover {
 }
 
 /* -- NAV BAR -- */
-
-.navbar {
-    background-color: transparent;
+.navbar{
+    background: linear-gradient(rgba(226, 226, 226, 0.7) 0%, rgba(226, 226, 226, 0.7) 70%, rgba(0, 0, 0, 0));
 }
 
 .orange-brand{
     color:#FF6D0B;
     font-family: "roc-grotesk-wide", sans-serif;
     font-weight: 700;
+    
 }
 
 .navbar-brand {
@@ -96,7 +95,7 @@ a:hover {
 }
 
 .navbar-nav{
-    background-color: #f9f9f964;
+    background-color: #f9f9f9;
     border: 2px solid rgb(6, 0, 0);
     border-radius: 30px;
 }
@@ -117,7 +116,15 @@ a:hover {
 /* -- FOOTER -- */
 
 footer {
-    background-color: #ffffff94;
+    background-color: rgba(226, 226, 226, 0.7);
+}
+
+footer svg:hover{
+    fill:#FF6D0B;
+}
+
+.footer-brand:hover{
+    color: #060000;
 }
   
 footer h6 {
@@ -129,6 +136,10 @@ footer h6 {
     display: inline-block;
     border: 2px solid rgb(6, 0, 0);
     border-radius: 30px;
+}
+
+.footer-email:hover{
+    border: 2px solid #FF6D0B;
 }
 
 @media (max-width: 880px) {
