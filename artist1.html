@@ -226,20 +226,19 @@
         <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
         <script>
             const lenis = new Lenis({
-            lerp: 0.09,
-            wheelMultiplier: 1.5,
-            infinite: false
+            lerp: 0.15,
+            wheelMultiplier: 0.8,
             });
 
-            function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-            }
-            requestAnimationFrame(raf);
-
-            gsap.registerPlugin(ScrollTrigger);
+            lenis.scrollTo(1, { lerp: 0.05, duration: 1 });
 
             lenis.on("scroll", ScrollTrigger.update);
+
+            gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+            });
+
+            gsap.ticker.lagSmoothing(0);
 
         </script>
 
@@ -285,7 +284,7 @@
             stagger: 0.02
             }, "+=0.3")
            .from(".social-icons a", { opacity: 0, y: 20, scale: 1.7, filter: "blur(6px)",
-            duration: 0.4,
+            duration: 0.3,
             ease: "power2.inOut",
             stagger: {
                 each: 0.2,
@@ -293,31 +292,29 @@
                 from: "random",
             } }, "+=0.2");
 
-        gsap.from(".video-container", { z: -500, rotationX: 70, y: -100, transformOrigin: "bottom bottom", scrollTrigger: {
-                trigger: ".video-container", scrub: 2, start: "top bottom", end: "98% bottom", once: true, ease: "power2.inOut" }} );
+        gsap.from(".video-container", { z: -500, rotationX: 60, transformOrigin: "bottom bottom", scrollTrigger: {
+                trigger: ".video-container", scrub: 4, start: "top bottom", end: "bottom bottom", once: true, ease: "power2.inOut" }} );
           
 
         gsap.fromTo(
             ".gallery-item",
-            { scale: 0.3, filter: "blur(3px)", rotate: () => gsap.utils.random(-10, 10)},
+            { scale: 0.5, opacity: 0, rotate: () => gsap.utils.random(-10, 10)},
             {
             scale: 1,
-            filter: "blur(0px)",
+            opacity: 1,
             rotate: "0deg",
             ease: "power4.out",
-            duration: 0.8,
+            duration: 1.2,
             stagger: {
-                each: 0.4,
+                each: 0.9,
                 grid: [1, 4],
                 from: "random",
             },
             scrollTrigger: {
                 trigger: ".gallery-item",
-                scrub: false,
+                scrub: 3,
                 start: "top 95%",
                 end: "top center",
-                markers: true,
-                toggleActions: "play none none none"
             }
             }
         );
