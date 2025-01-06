@@ -224,6 +224,24 @@
 
         <!-- Librería Lenis.js -->
         <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+        <script>
+            const lenis = new Lenis({
+            lerp: 0.09,
+            wheelMultiplier: 1.5,
+            infinite: false
+            });
+
+            function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            lenis.on("scroll", ScrollTrigger.update);
+
+        </script>
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -256,34 +274,18 @@
 
         let tl = gsap.timeline();
 
-        tl.fromTo(".nombre span", {opacity: 0, x: -550, y: 500, rotate: 90, scale: 0.1 },{
-            x: 0,
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            rotate: 0,
-            transformOrigin: "top left",
+        tl.from(".nombre span", {opacity: 0, x: -550, y: 500, rotate: 90, scale: 0.1, transformOrigin: "top left",
             duration: 1.2,
             ease: "elastic.easeOut(0.25)",
             stagger: 0.05
             })
-          .fromTo(".bio span", { opacity: 0, y: 20, scale: 1.7, filter: "blur(6px)" },{
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            rotate: 0,
-            filter: "blur(0px)",
+          .from(".bio span", { opacity: 0, y: 20, scale: 1.7, filter: "blur(6px)",
             duration: 0.4,
             ease: "power4.inOut",
             stagger: 0.02
             }, "+=0.3")
-           .fromTo(".social-icons a", { opacity: 0, y: 20, scale: 1.7, filter: "blur(6px)" },{
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            rotate: 0,
-            filter: "blur(0px)",
-            duration: 0.5,
+           .from(".social-icons a", { opacity: 0, y: 20, scale: 1.7, filter: "blur(6px)",
+            duration: 0.4,
             ease: "power2.inOut",
             stagger: {
                 each: 0.2,
@@ -291,21 +293,21 @@
                 from: "random",
             } }, "+=0.2");
 
-        gsap.from(".video-container", { z: -510, rotationX: 75, y: -100, transformOrigin: "bottom bottom", scrollTrigger: {
-                trigger: ".video-container", scrub: 2, start: "top bottom", end: "bottom 90%", once: true, ease: "power2.inOut" }} );
+        gsap.from(".video-container", { z: -500, rotationX: 70, y: -100, transformOrigin: "bottom bottom", scrollTrigger: {
+                trigger: ".video-container", scrub: 2, start: "top bottom", end: "98% bottom", once: true, ease: "power2.inOut" }} );
           
 
         gsap.fromTo(
             ".gallery-item",
-            { scale: 0.2, filter: "blur(4px)", rotateZ: "-5deg"},
+            { scale: 0.3, filter: "blur(3px)", rotate: () => gsap.utils.random(-10, 10)},
             {
             scale: 1,
             filter: "blur(0px)",
-            rotateZ: "0deg",
-            ease: "power3.inOut",
-            duration: 1.15,
+            rotate: "0deg",
+            ease: "power4.out",
+            duration: 0.8,
             stagger: {
-                each: 0.8,
+                each: 0.4,
                 grid: [1, 4],
                 from: "random",
             },
