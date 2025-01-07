@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     // Lenis
     let lenisHeader;
 
@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
     lenisHeader = new Lenis({
         lerp: 0.08,
         autoRaf: true,
-        wheelMultiplier: 0.7,
+        wheelMultiplier: 1.1,
     });
     
-    lenisHeader.scrollTo(1, { lerp: 0.05, duration: 1.5 });
+    lenisHeader.scrollTo(1, { lerp: 0.05, duration: 1 });
 
     lenisHeader.on("scroll", ({ scroll }) => {
         text.style.transform = `translate3D(${-scroll}px, 0, 0)`;
@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const galleryFigures = gsap.utils.toArray(".artist-list-gallery-figure");
+    const galleryFigcaption = gsap.utils.toArray(".descript");
 
     galleryFigures.forEach((figure) => {
         gsap.to(figure, {
@@ -70,37 +71,34 @@ document.addEventListener("DOMContentLoaded", function () {
             paused: true,
             scrollTrigger: {
                 trigger: figure,
-                start: "top 55%",
-                end: "bottom 40%",
+                start: "top 60%",
+                end: "bottom 15%",
                 // markers: true,
                 onEnter: () => {
-                    gsap.to(figure, { scale: 0.9, duration: 1, opacity: 1 });
+                    gsap.to(figure, { scale: 0.9, duration: 0.5, opacity: 0.9 });
                 },
                 onLeave: () => {
-                    gsap.to(figure, { scale: 0.7, duration: 1, opacity: 0 });
+                    gsap.to(figure, { scale: 0.7, duration: 0.5, opacity: 0 });
                 },
                 onEnterBack: () => {
-                    gsap.to(figure, { scale: 0.9, duration: 1, opacity: 1 });
+                    gsap.to(figure, { scale: 0.9, duration: 0.5, opacity: 0.9 });
                 },
                 onLeaveBack: () => {
-                    gsap.to(figure, { scale: 0.7, duration: 1, opacity: 0 });
+                    gsap.to(figure, { scale: 0.7, duration: 0.5, opacity: 0 });
                 }
             },
         });
     });
 
-    const galleryFigcaption = gsap.utils.toArray(".figcaption-2");
-
     galleryFigcaption.forEach((figcaption) => {
         gsap.to(figcaption, {
-            y: -20,
-            duration: 3,
+            y: -25,
+            duration: 2,
             scrollTrigger: {
                 trigger: figcaption,
                 start: "top bottom",
-                end: "bottom 55%",
+                end: "bottom 25%",
                 scrub: true,
-                // markers: true,
                 onEnter: () => {
                     gsap.to(figcaption, { opacity: 1 });
                 },
@@ -116,4 +114,5 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
 });
