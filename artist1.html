@@ -135,7 +135,7 @@
 
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
-            <img src="https://source.unsplash.com/400x400/?creative,pattern" alt="Imagen Cuadrada">
+            <img src="images\artist1\Sin título-5.png" alt="Imagen Cuadrada">
             <div class="gallery-text">Arte Abstracto</div>
         </div>
 
@@ -159,14 +159,16 @@
 
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
-            <img src="https://source.unsplash.com/400x400/?technology,futuristic" alt="Imagen Cuadrada">
+            <img src="images\artist1\Sin título-4.png" alt="Imagen Cuadrada">
             <div class="gallery-text">Arte Abstracto</div>
         </div>
     </div>
 </section>
 
 
-        
+
+
+
 
         <footer class="text-center mt-4">
             <div class="container-fluid border-top border-black py-3 px-5">
@@ -361,5 +363,27 @@
                 retina_detect: true
             });
         </script>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Comprobar si el usuario ya tiene activado el modo oscuro en localStorage
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        // Guardar preferencia en localStorage
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+</script>
+
     </body>
 </html>

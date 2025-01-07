@@ -179,6 +179,16 @@
     filter: grayscale();
 }
 
+.byn img {
+    filter: grayscale();
+}
+
+
+
+
+
+
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .gallery-grid {
