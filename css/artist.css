@@ -157,6 +157,55 @@
 }
 
 
+
+/* Modo Oscuro General */
+body.dark-mode {
+    filter: invert(1);
+    background-color: #111;
+}
+
+/* Excluir elementos específicos del filtro */
+body.dark-mode img,
+body.dark-mode video,
+body.dark-mode .menu {
+    filter: invert(1);
+}
+
+/* Ajuste del menú para evitar el desplazamiento */
+.menu {
+    position: fixed; /* Asegura que se mantiene fijo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: inherit; /* Evita fondos inesperados */
+}
+
+/* Corregir el body para eliminar el espacio no deseado */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita desplazamientos horizontales */
+}
+
+/* Evita que el filtro afecte al contenedor principal del menú */
+body.dark-mode .menu {
+    position: fixed;
+    filter: none !important; /* Evita cualquier efecto de filtro */
+    background-color: #111; /* O el color que prefieras */
+    z-index: 10000; /* Asegura que siempre está por encima */
+}
+
+/* Si persiste el problema, fuerza el margin y padding en el body */
+body.dark-mode {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+
+
+
 /* ANIMACIONES ADICIONALES */
 .gallery-item::after {
     content: "";
