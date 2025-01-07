@@ -195,6 +195,10 @@ canvas {
 
 .content {
     margin-right: 2rem;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding-top: 0.6rem;
+    margin: 0.3rem;
 }
 
 .artist-list-text-wrapper > *:not(:first-child) {
