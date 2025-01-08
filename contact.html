@@ -15,45 +15,83 @@
         <div class="filter-noise"></div>
         <div class="gradient"></div>
         <div id="particles-js"></div>
+        
+        <nav class="navbar navbar-expand-md fixed-top">
+            <div class="container-fluid py-4 px-5">
+                <a class="navbar-brand" href="index.html">
+                    <span class="orange-brand">ORANGE</span>COLLECTIVE™
+                </a>
 
-        <header>
-            <nav class="navbar navbar-expand-md fixed-top">
-                <div class="container-fluid py-4 px-5">
-                    <a class="navbar-brand" href="index.html">
-                        <span class="orange-brand">ORANGE</span>COLLECTIVE™
-                    </a>
-    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav px-3 py-1">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">HOME</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">ARCHIVE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">MERCH</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="contact.html">CONTACT</a>
-                            </li>
-                        </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav px-3 py-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ARCHIVE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MERCH</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="scroll-container-desktop">
+            <div class="d-flex flex-column flex-md-row align-items-md-start mx-5" style="min-height: 100vh;">
+                <!-- Bloque Izquierdo -->
+                <div class="lets_talk col-12 col-md-6">
+                    <h1 class="animated-text mb-4">LET'S TALK!</h1>
+                    <p class="text-center mb-4">WHICH PROJECT DO YOU<br>WANT TO START WITH US?</p>
+                
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="d-flex justify-content-center">
+                            <div class="circle me-3">NEW BUSINESS</div>
+                            <div class="circle">INFLUENCER COLLAB</div>
+                        </div>
+                        <div class="circle">JOIN OUR #TEAM</div>
+                    </div>
+                
+                    <div class="d-flex justify-content-center mt-4">
+                        <a href="mailto:info@orangecollective.com">info@orangecollective.com</a>
                     </div>
                 </div>
-            </nav>
-        </header>
 
-        <div class="lets_talk m-5 p-5">
-            lets_talk
-        </div>
+                <!-- Bloque Derecho -->
+                <div class="scroll-container-mobile we_do_with col-12 col-md-6">
+                    <!-- Sección "We do" -->
+                    <div class="we_do_section d-flex align-items-center">
+                        <p class="col">WE DO</p>
+                        <div id="weDoOptions" class="col options">
+                            <p>Campaigns</p>
+                            <p>Design systems</p>
+                            <p>Websites</p>
+                            <p>Digital results</p>
+                        </div>
+                    </div>
 
-        <div class="we_do_with m-5 p-5">
-            we_do_with
+                    <!-- Sección "With" -->
+                    <div class="with_section d-flex align-items-center mt-3">
+                        <p class="col text-big">WITH</p>
+                        <div id="withOptions" class="col options">
+                            <p>Design</p>
+                            <p>Movement</p>
+                            <p>Sound</p>
+                            <p>Imagery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        
 
         <div class="contact_us text-center">
             <h2>Let's create<br>something together</h2>
@@ -167,6 +205,8 @@
                 retina_detect: true
             });
         </script>
+
+        <script src="contact.js"></script>
         
     </body>
 </html>
