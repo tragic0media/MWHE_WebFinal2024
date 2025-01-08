@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Artistlist</title>
+</head>
+<body>
+
+    <div class="filter-noise"></div>
+    <div class="gradient-dark"></div>
+    <div id="particles-js"></div>
+
+    <!-- Primer Canvas -->
+    <div id="scene1-container">
+        <canvas id="scene1"></canvas>
+    </div>
+
+    <header class="header">
+        <div class="header-wrapper">
+            <div class="header-logo"><p><a href="#">Lenis™</a></p></div>
+            <ul class="header-pages">
+                <li class="header-pages-item"><a href="#">Home</a></li>
+                <!-- <li class="header-pages-item"><a href="#">Products</a></li> -->
+                <li class="header-pages-item"><a href="#">Blog</a></li>
+                <li class="header-pages-item"><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="artist-list">
+            <div class="artist-list-wrapper">
+                <div class="artist-list-text">
+                    <div class="content-wrapper">
+                        <div class="content content1">
+                            <h5>Exhibition: "Sculptures of the Future"</h5>
+                            <p>
+                            Location: The National Gallery of Modern Art, London, United Kingdom <br> 
+                            Dates: February 10 - April 5, 2025 <br>
+                            Tickets: £18. Available online at 
+                            <a href="https://www.nationalgallery.org.uk/">[www.nationalgallery.org.uk]</a>
+                            </p>
+                        </div>
+                        <div class="content content2">
+                            <h5>Overview</h5>
+                            <p>
+                            "Sculptures of the Future" is a forward-thinking exhibition showcasing 10 groundbreaking sculptors who are reimagining the future through innovative and visionary sculptural works. The exhibition explores how art can reflect and respond to rapid advancements in technology, artificial intelligence, environmental changes, and societal evolution. <a href="#">Special Events & Activities <span>🡥</span></a>
+                            </p>
+                        </div>
+                        <div class="content content3">
+                            <h5>Featured Sculptors:</h5>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="01">Olivia Wu</h5>
+                            <p data-work="Symbiosis">
+                            Olivia Wu's interactive sculptures explore the harmony between nature and technology. Her kinetic pieces react to the environment, evolving and changing with light and movement, reflecting the symbiotic future of nature and innovation.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="02">Ethan Ramos</h5>
+                            <p data-work="Digital Metamorphosis">
+                            Ethan Ramos's sculptures blur the lines between the physical and virtual worlds, using augmented reality to transform his work in real-time. These sculptures explore the concept of transformation in a future dominated by digital evolution.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="03">Maya Patel</h5>
+                            <p data-work="Roots and Machines">
+                            Maya Patel's work is a fusion of organic forms and mechanical elements, using sustainable materials and futuristic technologies to create pieces that evoke the interconnectedness of humanity and technology in the future.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="04">Sebastian Álvarez</h5>
+                            <p data-work="Mechanical Consciousness">
+                            Sebastian Álvarez's large-scale sculptures reflect the merging of human consciousness with machines. His works incorporate robotic elements that move and respond to the environment, challenging our understanding of what it means to be human.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="05">Imani Okafor</h5>
+                            <p data-work="Beyond the Horizon">
+                            Imani Okafor's sculptures are deeply influenced by African heritage, exploring how traditional cultures will adapt and evolve in the face of technological advancements. Her work uses futuristic materials like 3D-printed metals and composites, with an emphasis on sustainability.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="06">Hannah Krause</h5>
+                            <p data-work="Echoes of Tomorrow">
+                            Hannah Krause's abstract sculptures are made from recycled electronic waste, symbolizing a world where technology's life cycle is cyclical, and waste is transformed into art. Her pieces provoke thought about the impact of consumerism and the future of digital disposal.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="07">Javier Torres</h5>
+                            <p data-work="Evolving Forms">
+                            Javier Torres creates dynamic, ever-evolving sculptures using flexible materials and sensors, which react to the viewer's movement. His work represents the unpredictability of the future, where change is constant and inevitable.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="08">Isabella Zhang</h5>
+                            <p data-work="AI and Human">
+                            Isabella Zhang explores the relationship between humans and artificial intelligence through sculptures that use sensors and artificial intelligence to alter their form based on human interaction, symbolizing the merging of human intellect and machine.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="09">Luca Mendez</h5>
+                            <p data-work="Nano-Creations">
+                            Luca Mendez works with nanoscale technology to create sculptures that exist on a microscopic level. These sculptures reflect the potential of nanotechnology in the future, exploring themes of microscopic evolution and growth.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                        <div class="content content4">
+                            <h5 data-number="10">Keira Robinson</h5>
+                            <p data-work="Futuristic Utopia">
+                            Keira Robinson creates monumental sculptures that envision a utopian future. Her works incorporate sustainable materials and integrate with natural environments, symbolizing the potential for harmonious cohabitation between humanity and nature in the future.
+                            <a href="#">| <span>+</span> |</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="artist-list-gallery">
+                    <div class="artist-list-gallery-wrapper">
+                        <div class="figure-wrapper">
+                            <a href="#">
+                                <figure class="artist-list-gallery-figure">
+                                        <img src="images/1.jpg" alt="none" class="artist-list-gallery-image">
+                                        <img src="images/1.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                        <div class="noise"></div>
+                                        <div class="light"></div>
+                                        <div class="number">[01 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2"><span>L'Enlèvement d'Andromède par Persée. 1679 / 1684</span><span>Puget, Pierre. France</span></figcaption>
+                        </div>
+                        <div class="figure-wrapper">
+                            <a href="#">
+                                <figure class="artist-list-gallery-figure">
+                                        <img src="images/2.jpg" alt="none" class="artist-list-gallery-image">
+                                        <img src="images/2.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                        <div class="noise"></div>
+                                        <div class="light"></div>
+                                        <div class="number">[02 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2">Le Jupiter Olympien ou l'art de la sculpture antique</figcaption>
+                        </div>
+                        <div class="figure-wrapper">
+                            <a href="#">
+                                <figure class="artist-list-gallery-figure">
+                                    <img src="images/3.jpg" alt="none" class="artist-list-gallery-image">
+                                    <img src="images/3.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <div class="noise"></div>
+                                    <div class="light"></div>
+                                    <div class="number">[03 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2">Tirage du Zeus de Dresde. 1800 - 2000. <br> atelier de Dresde</figcaption>
+                        </div>
+                        <div class="figure-wrapper">
+                            <a href="#">
+                                <figure class="artist-list-gallery-figure">
+                                    <img src="images/4.jpg" alt="none" class="artist-list-gallery-image">
+                                    <img src="images/4.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <div class="noise"></div>
+                                    <div class="light"></div>
+                                    <div class="number">[04 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2">Oedipe enfant rappelé à lavie par le berger Phorbasqui <br> l'a détaché de l'arbre. 1810 / 1818. France. Cartellier, Pierre</figcaption>
+                        </div>
+                        <div class="figure-wrapper">
+                            <a href="#">
+                                <figure class="artist-list-gallery-figure">
+                                    <img src="images/5.jpg" alt="none" class="artist-list-gallery-image">
+                                    <img src="images/5.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <div class="noise"></div>
+                                    <div class="light"></div>
+                                    <div class="number">[05 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2">Tirage du Zeus de Dresde. 1800 - 2000. <br> atelier de Dresde</figcaption>
+                        </div>
+                        <div class="figure-wrapper">
+                            <a href="a">
+                                <figure class="artist-list-gallery-figure">
+                                    <img src="images/6.jpg" alt="none" class="artist-list-gallery-image">
+                                    <img src="images/6.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <div class="noise"></div>
+                                    <div class="light"></div>
+                                    <div class="number">[06 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2">Athéna plante un olivier, Poseidon fait jaillir un lacsalé <br> devant Zeus.
+                                Farinati, Paolo</figcaption>
+                        </div>
+                        <div class="figure-wrapper">
+                            <a href="#">
+                                <figure class="artist-list-gallery-figure">
+                                    <img src="images/7.jpg" alt="none" class="artist-list-gallery-image">
+                                    <img src="images/7.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <div class="noise"></div>
+                                    <div class="light"></div>
+                                    <div class="number">[07 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2">Statue. -333 / -200. Lieu de découverte : Chypre</figcaption>
+                        </div>
+                        <div class="figure-wrapper">
+                            <a href="#">
+                                <figure class="artist-list-gallery-figure">
+                                    <img src="images/8.jpg" alt="none" class="artist-list-gallery-image">
+                                    <img src="images/8.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <div class="noise"></div>
+                                    <div class="light"></div>
+                                    <div class="number">[08 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2">Tirage du Zeus de Dresde. 1800 - 2000. <br> atelier de Dresde</figcaption>
+                        </div>
+                        <div class="figure-wrapper">
+                            <a href="#">
+                                <figure class="artist-list-gallery-figure">
+                                    <img src="images/9.jpg" alt="none" class="artist-list-gallery-image">
+                                    <img src="images/9.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <div class="noise"></div>
+                                    <div class="light"></div>
+                                    <div class="number">[09 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2">Tirage du Zeus de Dresde. 1800 - 2000. <br> atelier de Dresde</figcaption>
+                        </div>
+                        <div class="figure-wrapper">
+                            <a href="#">
+                                <figure class="artist-list-gallery-figure">
+                                    <img src="images/10.jpg" alt="none" class="artist-list-gallery-image">
+                                    <img src="images/10.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <div class="noise"></div>
+                                    <div class="light"></div>
+                                    <div class="number">[10 / 10]</div>
+                                </figure>
+                            </a>
+                            <figcaption class="figcaption-2">Projet pour une statueéquestre. <br>
+                                Puget, Pierre, attribué à</figcaption>
+                        </div>
+                        <div class="artist-list-gallery-info">
+                            <p>Sculpture works: A conversion between the classical and modern technology that provides an imaginary of the future. This is a selection of the works exhibited around the world.</p>
+                            <p>Visit the National Gallery of Modern Art in London and immerse yourself in a world of futuristic creativity. Book your tickets now and be part of this visionary journey into tomorrow!
+                            </p>
+                            <p class="artist-list-gallery-action">[GO TO THE GALLERY]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="scroll">
+            <p class="scroll-info">Scroll &#8628;</p>
+        </div>
+    </main>
+
+     <!-- Segundo Canvas -->
+     <div id="scene2-container">
+        <canvas id="scene2"></canvas>
+        <div id="entradas">
+            <div id="central-element">
+                <a href="#">Comprar entradas</a>
+            </div>
+        </div>
+        <p><a href="#" class="volver">Back &#8629;</a></p>
+    </div>
+
+    <!-- Cargar la librería GSAP + ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Cargar la librería Lenis.js -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- Cargar la librería Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 120,
+                    density: { enable: true, value_area: 500 }
+                },
+                color: { value: "#fffabc" },
+                shape: {
+                    type: "circle",
+                    stroke: { width: 0, color: "#000000" }
+                },
+                opacity: {
+                    value: 1,
+                    random: true
+                },
+                size: {
+                    value: 1,
+                    random: true
+                },
+                line_linked: {
+                    enable: false
+                },
+                move: {
+                    enable: true,
+                    speed: 0.4,
+                    random: true,
+                    out_mode: "out"
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
+    <!-- Cargar la librería Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+        // Escena 1
+        const scene1 = new THREE.Scene();
+        scene1.background = null;
+        const camera1 = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.01, 1000);
+        const renderer1 = new THREE.WebGLRenderer({
+            canvas: document.getElementById("scene1"),
+            alpha: true,
+        });
+        renderer1.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer1.setSize(window.innerWidth, window.innerHeight);
+
+        // Luz
+        renderer1.shadowMap.enabled = false;
+        const ambientLight1 = new THREE.AmbientLight(0xffffff, 0.8);
+        scene1.add(ambientLight1);
+
+        //Texto
+        const loader1 = new THREE.FontLoader();
+        loader1.load("Red_Hat_Text_Regular.json", (font) => {
+            const text = "Sculptures of the future".toUpperCase();
+            const letterMeshes = [];
+
+            for (let i = 0; i < text.length; i++) {
+                const letter = text[i];
+                const shapes = font.generateShapes(letter, 13);
+                const geometry = new THREE.ExtrudeGeometry(shapes, {
+                    depth: 1,
+                    bevelEnabled: false,
+                });
+
+                geometry.computeVertexNormals();
+
+                const textMaterial = new THREE.MeshStandardMaterial({ color: 0xefefef });
+                const textMesh = new THREE.Mesh(geometry, textMaterial);
+
+                scene1.add(textMesh);
+                letterMeshes.push(textMesh);
+            }
+
+            // Velocidad
+            const angularSpeed = 0.0006;
+            const radius = (window.innerWidth * 0.5) / 1;
+
+            let needsUpdate = true;
+
+            function animateScene1() {
+                requestAnimationFrame(animateScene1);
+                if (!needsUpdate) return;
+
+                const time = Date.now() * -angularSpeed;
+                letterMeshes.forEach((letterMesh, index) => {
+                    const angleOffset = time + (index * Math.PI / (letterMeshes.length * 6));
+                    const x = radius * Math.cos(angleOffset);
+                    const z = radius * Math.sin(angleOffset);
+                    letterMesh.position.set(x, 0, z);
+                    letterMesh.lookAt(0, 0, 0);
+                });
+
+                camera1.position.z = 0;
+                camera1.position.y = -10;
+                renderer1.render(scene1, camera1);
+            }
+
+            document.addEventListener("visibilitychange", () => {
+                needsUpdate = document.visibilityState === "visible";
+            });
+
+            animateScene1();
+        });
+
+        window.addEventListener("resize", () => {
+            renderer1.setSize(window.innerWidth, window.innerHeight);
+            camera1.aspect = window.innerWidth / window.innerHeight;
+            camera1.updateProjectionMatrix();
+            needsUpdate = true;
+        });
+
+
+        //Escena 2
+        const scene2 = new THREE.Scene();
+        const camera2 = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer2 = new THREE.WebGLRenderer({
+            canvas: document.getElementById("scene2"),
+            alpha: true,
+        });
+        renderer2.setSize(window.innerWidth, window.innerHeight);
+
+        //Texto
+        const loader2 = new THREE.FontLoader();
+        loader2.load("Red_Hat_Text_Regular.json", (font) => {
+            const text = "[Sculptures of the Future]".toUpperCase();
+            const letterMeshes = [];
+
+            for (let i = 0; i < text.length; i++) {
+            const letter = text[i];
+            
+                const textGeometry = new THREE.TextGeometry(letter, {
+                    font: font,
+                    size: 10,
+                    height: 1,
+                });
+
+                const textMaterial = new THREE.MeshBasicMaterial({ color: 0x7f90ff });
+                const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+                scene2.add(textMesh);
+                letterMeshes.push(textMesh);
+            }
+
+            // Velocidad
+            const radius = 150;
+            const angularSpeed = 0.001;
+            const waveFrequency = 0.1;
+            const waveAmplitude = 10;
+
+            let needsUpdate = true;
+
+            function animateScene2() {
+                requestAnimationFrame(animateScene2);
+                if (!needsUpdate) return;
+
+                const angle = -angularSpeed * Date.now();
+                letterMeshes.forEach((letterMesh, index) => {
+                    const angleOffset = angle + (index * Math.PI / (letterMeshes.length * 1.5));
+                    const x = radius * Math.cos(angleOffset);
+                    const z = radius * Math.sin(angleOffset);
+                    const y = waveAmplitude * Math.sin(waveFrequency * angleOffset);
+                    
+                    letterMesh.position.set(x, y, z);
+                    letterMesh.lookAt(0, 0, 0);
+                });
+
+                camera2.position.z = 300;
+                camera2.position.y = 100;
+                camera2.lookAt(scene2.position);
+
+                renderer2.render(scene2, camera2);
+
+                document.addEventListener("visibilitychange", () => {
+                    needsUpdate = document.visibilityState === "visible";
+                });
+            }
+
+            animateScene2();
+        });
+
+        window.addEventListener("resize", () => {
+            renderer2.setSize(window.innerWidth, window.innerHeight);
+            camera2.aspect = window.innerWidth / window.innerHeight;
+            camera2.updateProjectionMatrix();
+            needsUpdate = true;
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
