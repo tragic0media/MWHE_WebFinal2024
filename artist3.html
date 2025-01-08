@@ -33,10 +33,6 @@
     
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav px-2 py-1">
-                            <li>
-                                <button id="darkModeToggle">🌓 Modo Oscuro</button>
-
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html">HOME</a>
                             </li>
@@ -73,9 +69,8 @@
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="social-icons">
-                        <a href="#" class="text-dark mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://www.behance.net/slapsagency?locale=es_ES" class="text-dark mx-2"><i class="fab fa-behance fa-2x"></i></a>
                         <a href="https://www.instagram.com/slapscreative/?hl=es" class="text-dark mx-2"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="#" class="text-dark mx-2"><i class="fab fa-twitter fa-2x"></i></a>
                         <a href="https://www.linkedin.com/company/slapscreative/?originalSubdomain=es" class="text-dark mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
                     </div>
                 </div>
@@ -371,26 +366,7 @@
             });
         </script>
 
-<script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
 
-    // Comprobar si el usuario ya tiene activado el modo oscuro en localStorage
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        body.classList.add('dark-mode');
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-
-        // Guardar preferencia en localStorage
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-        }
-    });
-</script>
 
     </body>
 </html>
