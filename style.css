@@ -9,33 +9,20 @@ html, body {
 }
 
 :root {
-    /* Fonts */
-    --min-font-size: 1rem;
-    --max-font-size: 2rem;
-    --preferred-font-size: calc(100vw / 1920 * 0.625rem);
+    /* Sizes */
+    /* Title Card */
+    --min-font-title-card: 4rem;
+    --max-font-title-card: 5vw;
+    --preferred-font-title-card: calc(2vw - 4rem);
+    /* Title Presentation */
+    --min-font-title-pres: 1rem;
+    --max-font-title-pres: 2.5rem;
+    --preferred-font-title-pres: 2.1rem;
 
     /* Colors */
     --orange: #FF6D0B;
     --black: #060000;
     --white: #f9f9f9;
-}
-
-/* .gradient-white {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 11;
-    background: linear-gradient(0deg, rgba(245, 244, 244, 0.892) 8%, rgba(226, 226, 226, 0.163) 22%, rgba(226, 226, 226, 0) 98%);
-} */
-
-h1 {
-  font-size: clamp(
-    var(--min-font-size), 
-    calc(var(--min-font-size) + var(--preferred-font-size)), 
-    var(--max-font-size)
-  );
 }
 
 h3 {
@@ -55,19 +42,11 @@ h3 {
     line-height: 1.1em;
 }
 
-/* .content:not(.b) h5 {
-    color: var(--orange);
-} */
-
 .content a, .artist-list-gallery-action {
     color: var(--orange);
     overflow: hidden;
     line-height: 1;
     transition: all 0.2s;
-}
-
-.content.c a {
-    font-weight: 700;
 }
 
 .content.b a:hover, .artist-list-gallery-action:hover {
@@ -106,16 +85,31 @@ canvas {
     position: relative;
     display: flex;
     z-index: 65;
+    background: #FF6D0B;
+    background: -webkit-linear-gradient(to top, #fbd557 5%, #FF6D0B 60%);
+    background: linear-gradient(to top, #fbd557 5%, #FF6D0B 60%);
 }
 
 #scene2 {
     width: 100%;
     height: 100%;
     display: block;
-    background-color: rgb(241, 241, 241);
+    border-top: 3px solid var(--black);
 }
 
-.volver {
+footer {
+    position: relative;
+    display: flex;
+    z-index: 65;
+}
+
+footer .container-fluid {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.back {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -123,7 +117,7 @@ canvas {
     text-transform: uppercase;
 }
 
-.volver span {
+.back span {
     margin-right: 0.5em;
 }
 
@@ -137,29 +131,42 @@ canvas {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    transform: translateY(-20px);
+    transform: translateY(-30px);
+}
+
+#central-element-wrapper {
+    width: max-content;
+    transform: scale(1);
+    transition: transform 1s cubic-bezier(0.15, 0.885, 0.62, 1);
 }
 
 #central-element {
-    position: absolute;
+    position: relative;
     z-index: 10;
-    width: 270px;
-    height: 270px;
-    background: radial-gradient(circle, rgba(234, 234, 234, 0.318) 40%, rgba(229, 229, 229, 0.725) 50%, var(--orange) 100%);
-    animation: planetPulse 1.5s infinite;
-    transition: transform 1s cubic-bezier(0.15, 0.885, 0.62, 1);
-
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-    border: 3px solid var(--black);
+    border: 0.3vw solid var(--black);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 30px rgba(10, 10, 10, 0.2);
-    transform: scale(1);
+    box-shadow: 0 5px 25px rgba(24, 24, 24, 0.25);
     cursor: pointer;
+    transition: background-color 0.5s;
 }
 
-#central-element:hover {
+#central-element-cover {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(234, 234, 234, 0) 40%, rgba(229, 229, 229, 0.097) 50%, rgb(220, 220, 220) 100%);
+    animation: planetPulse 1.5s infinite;
+}
+
+#central-element-wrapper:hover {
     transform: scale(0.95);
 }
 
@@ -167,22 +174,20 @@ canvas {
     color: var(--orange);
 }
 
+#central-element:hover {
+    background-color: rgb(229, 229, 229);
+}
+
 #central-element h5 {
-    font-weight: 700;
     text-transform: uppercase;
+    font-size: 2rem;
     margin: 0;
 }
 
 @keyframes planetPulse {
-    0% {
-        opacity: .7;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: .7;
-    }
+    0% { opacity: .6; }
+    50% { opacity: 1; }
+    100% { opacity: .6; }
 }
 
 .artist-list-text {
@@ -194,6 +199,8 @@ canvas {
 }
 
 .content {
+    max-width: 100%;
+    word-wrap: break-word; 
     margin-right: 2rem;
     backdrop-filter: blur(4px);
     border-radius: 10px;
@@ -206,7 +213,7 @@ canvas {
 }
 
 .content.c a::after {
-    content: '+';
+    content: "+";
     position: absolute;
     bottom: -20px;
     left: 50%;
@@ -231,8 +238,9 @@ canvas {
 }
 
 .content.c a {
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    font-weight: 700;
+    transform: translateX(3px);
 }
 
 .content.a a span {
@@ -267,7 +275,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fefefe;
+    background-color: var(--white);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5' viewBox='0 0 5 5'%3E%3Cpath fill='%231c3fe7' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     opacity: .25;
     pointer-events: none;
@@ -304,13 +312,24 @@ img {
     font-size: 1.5vw;
 }
 
+.number.title {
+    position: absolute;
+    top: 2vh;
+    z-index: 2;
+    font-size: clamp(var(--min-font-title-card), calc(var(--min-font-title-card) + var(--preferred-font-title-card)), var(--max-font-title-card));
+    font-weight: 700;
+    white-space: nowrap;
+}
+
 .descript {
     z-index: 2;
-    transform: translate(25px, -55px);
     width: max-content;
     color: var(--orange);
     backdrop-filter: blur(1px);
     border-radius: 15px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    line-height: 1em;
 }
 
 .artist-list {
@@ -337,11 +356,8 @@ img {
     justify-content: center;
     flex-direction: column;
     width: inherit;
-
-    gap: 22dvh;
     padding-top: 0;
-    padding-bottom: 2rem;
-
+    margin-bottom: 20vh;
     perspective: 5500px;
     animation: rotateY 10s infinite alternate ease-in-out;
 }
@@ -350,11 +366,12 @@ img {
     position: relative;
     width: 28rem;
     height: 38rem;
-    transform: scale(0.7);
+    transform: scale(1);
     overflow: hidden;
-    opacity: 0;
     border-radius: 5px;
-    border: 3px solid #000;
+    border: 3px solid var(--black);
+    opacity: 0;
+    transition: 0.2s;
 }
 
 @keyframes rotateY {
@@ -388,13 +405,15 @@ img {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: inherit;
-    padding-top: 60vh;
-    padding-bottom: 15vh;
+    width: 70%;
+    padding-top: 40vh;
+    padding-bottom: 12vh;
 }
 
-.artist-list-gallery-info {
-    width: 70%;
+.artist-gallery-info-wrapper h2 {
+    font-size: clamp(var(--min-font-title-pres), var(--preferred-font-title-pres), var(--max-font-title-pres));
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .artist-list-gallery-info p {
@@ -402,7 +421,6 @@ img {
 }
 
 .artist-list-gallery-action {
-    margin-top: 2rem;
     cursor: pointer;
     font-weight: 700;
     color: var(--black);
@@ -415,13 +433,18 @@ img {
 }
 
 .left {
-    left: 1%;
+    left: 0.9rem;
     top: 40%;
 }
 
 .right {
-    right: 1.3%;
+    right: 1.1rem;
     top: 40%;
+}
+
+.figure-wrapper {
+    padding-top: 30vh;
+    padding-top: min(30vh, 9vw);
 }
 
 
@@ -433,6 +456,16 @@ img {
 
 }
 
+@media (max-width: 768px) {
+    .artist-list-gallery-wrapper {
+        animation: none;
+    }
+}
+
 @media (max-width: 576px) {
 
+    .artist-list-text-wrapper .col {
+        width: 100vw;
+        max-width: 100vw;
+    }
 }

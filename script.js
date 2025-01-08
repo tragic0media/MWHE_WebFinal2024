@@ -10,11 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     lenisHeader = new Lenis({
         lerp: 0.08,
-        autoRaf: true,
-        wheelMultiplier: 1.1,
+        wheelMultiplier: 1.2,
     });
-    
-    lenisHeader.scrollTo(1, { lerp: 0.05, duration: 1 });
+
+    lenisHeader.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+        lenisHeader.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
 
     lenisHeader.on("scroll", ({ scroll }) => {
         text.style.transform = `translate3D(${-scroll}px, 0, 0)`;
@@ -66,53 +71,107 @@ document.addEventListener("DOMContentLoaded", function () {
     const galleryFigcaption = gsap.utils.toArray(".descript");
 
     galleryFigures.forEach((figure) => {
-        gsap.to(figure, {
-            scale: 0.7,
-            paused: true,
+        const animation = gsap.to(figure, {
             scrollTrigger: {
                 trigger: figure,
-                start: "top 60%",
-                end: "bottom 15%",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
                 // markers: true,
-                onEnter: () => {
-                    gsap.to(figure, { scale: 0.9, duration: 0.5, opacity: 0.9 });
+                onUpdate: (self) => {
+                    const progress = self.progress;
+
+                    let scaleStart = 1;
+                    let yPosition = 45;
+
+                    ScrollTrigger.matchMedia({
+                        "(max-width: 576px)": () => {
+                            scaleStart = 0.5;
+                            yPosition = 75;
+                        },
+                    });
+    
+                    const scale = gsap.utils.interpolate(scaleStart, 0.7, progress);
+                    const opacity = gsap.utils.interpolate(1, 0.5, progress);
+    
+                    gsap.to(figure, {
+                        scale: scale,
+                        opacity: opacity,
+                        y: yPosition,
+                        duration: 0.2,
+                        overwrite: "auto",
+                    });
+
+                    figure.addEventListener("mouseenter", () => {
+                        gsap.to(figure, {
+                            opacity: 1,
+                            ease: "power1.out"
+                        });
+                    });
+                
+                    figure.addEventListener("mouseleave", () => {
+                        gsap.to(figure, {
+                            opacity: opacity,
+                            ease: "power1.in"
+                        });
+                    });
                 },
-                onLeave: () => {
-                    gsap.to(figure, { scale: 0.7, duration: 0.5, opacity: 0 });
-                },
-                onEnterBack: () => {
-                    gsap.to(figure, { scale: 0.9, duration: 0.5, opacity: 0.9 });
-                },
-                onLeaveBack: () => {
-                    gsap.to(figure, { scale: 0.7, duration: 0.5, opacity: 0 });
-                }
             },
         });
+    
+        figure.animation = animation;
+    });
+    
+    
+    window.addEventListener("resize", () => {
+        galleryFigures.forEach((figure) => {
+            if (figure.animation) {
+                figure.animation.restart();
+            }
+        });
+        ScrollTrigger.refresh();
     });
 
     galleryFigcaption.forEach((figcaption) => {
         gsap.to(figcaption, {
-            y: -25,
-            duration: 2,
+            y: -15,
             scrollTrigger: {
                 trigger: figcaption,
-                start: "top bottom",
-                end: "bottom 25%",
-                scrub: true,
-                onEnter: () => {
-                    gsap.to(figcaption, { opacity: 1 });
+                start: "top 80%",
+                end: "bottom 30%",
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    const scale = gsap.utils.interpolate(1, 0.9, progress);
+                    gsap.to(figcaption, {
+                        scale: scale,
+                        duration: 0.2,
+                        overwrite: "auto",
+                    });
                 },
-                onLeave: () => {
-                    gsap.to(figcaption, { opacity: 0 });
-                },
-                onEnterBack: () => {
-                    gsap.to(figcaption, { opacity: 1 });
-                },
-                onLeaveBack: () => {
-                    gsap.to(figcaption, { opacity: 0 });
-                }
             }
         });
     });
 
+    window.addEventListener("resize", () => {       
+        galleryFigures.forEach((figure) => {
+            gsap.set(figure, {
+                opacity: 1,
+            });
+        });
+        ScrollTrigger.refresh();
+    });
+
+    window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+    });
+
+    gsap.from("#scene2-container", {
+        y: -200,
+        scrollTrigger: {
+            trigger: "#scene2-container",
+            start: "top bottom",
+            end: "top top",
+            scrub: 0.5,
+        },
+    });
 });
