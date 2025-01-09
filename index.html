@@ -4,13 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/page_style.css">
     <link rel="stylesheet" href="style.css">
-    <title>Artistlist</title>
+    <title>Orange Collective</title>
+    <link rel="icon" href="images/logo_OC.png" type="images/logo_OC">
 </head>
 <body>
 
+    <header>
+        <nav class="navbar navbar-expand-md fixed-top">
+            <div class="container-fluid py-4 px-5">
+                <a class="navbar-brand" href="index.html">
+                    <span class="orange-brand">ORANGE</span>COLLECTIVE™
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav px-3 py-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ARCHIVE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MERCH</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="ko fixed-top">
+            <div class="contenido-scroll d-flex justify-content-center align-items-center">
+                <div class="copy fixed-top d-none d-lg-block">©</div>
+                <div class="d-flex align-items-end justify-content-start initScroll-wrapper position-absolute"><p class="initScroll ms-4">SCROLL &#129123;</p></div>
+                <div class="recorte align-self-start align-self-lg-center"><h2 class="wel">WELCOME TO<span class="isgrad">(ORANGE COLLECTIVE)</span></h2></div>
+
+                <svg id="noice">
+                    <filter id="noise-filter">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.66" numOctaves="5.2" stitchTiles="stitch"></feTurbulence>
+                        <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                        <feComponentTransfer>
+                            <feFuncR type="linear" slope="1.57"></feFuncR>
+                            <feFuncG type="linear" slope="1.57"></feFuncG>
+                            <feFuncB type="linear" slope="1.57"></feFuncB>
+                            <feFuncA type="linear" slope="1"></feFuncA>
+                        </feComponentTransfer>
+                        <feComponentTransfer>
+                            <feFuncR type="linear" slope="3" intercept="-1.00"/>
+                            <feFuncG type="linear" slope="3" intercept="-1.00"/>
+                            <feFuncB type="linear" slope="3" intercept="-1.00"/>
+                        </feComponentTransfer>
+                    </filter>
+                    <rect width="100%" height="100%" filter="url(#noise-filter)"></rect>
+                </svg>
+                
+                <div class="ratio ratio-1x1 ratio-md-16x9 position-absolute RotateOR">
+                    <video id="RotateOR" autoplay loop muted playsinline class="w-100">
+                        <source src="models/RotationOR-0200.webm" type="video/webm">
+                        Your browser does not support HTML5 videos.
+                    </video>
+                </div>
+                <div class="d-flex flex-column justify-content-end align-items-center hero-badge position-absolute pb-5 pb-md-1">
+                    <p class="text-center">An artistic collective passionate about creating works that reflect a commitment to the world around us.</p>
+                    <p class="mt-0"><b>©</b>2025 ORANGE CO.</p>
+                </div>
+            </div>
+    </div>
+
     <div class="filter-noise"></div>
-    <div class="gradient-dark"></div>
+    <div class="gradient"></div>
     <div id="particles-js"></div>
 
     <!-- Primer Canvas -->
@@ -18,107 +90,60 @@
         <canvas id="scene1"></canvas>
     </div>
 
-    <header class="header">
-        <div class="header-wrapper">
-            <div class="header-logo"><p><a href="#">Lenis™</a></p></div>
-            <ul class="header-pages">
-                <li class="header-pages-item"><a href="#">Home</a></li>
-                <!-- <li class="header-pages-item"><a href="#">Products</a></li> -->
-                <li class="header-pages-item"><a href="#">Blog</a></li>
-                <li class="header-pages-item"><a href="#">Contacto</a></li>
-            </ul>
-        </div>
-    </header>
     <main>
         <section class="artist-list">
             <div class="artist-list-wrapper">
-                <div class="artist-list-text">
-                    <div class="content-wrapper">
-                        <div class="content content1">
-                            <h5>Exhibition: "Sculptures of the Future"</h5>
-                            <p>
-                            Location: The National Gallery of Modern Art, London, United Kingdom <br> 
-                            Dates: February 10 - April 5, 2025 <br>
-                            Tickets: £18. Available online at 
-                            <a href="https://www.nationalgallery.org.uk/">[www.nationalgallery.org.uk]</a>
+                <div class="container align-content-end vh-100 artist-list-text px-4">
+                    <div class="row d-flex flex-nowrap gx-5 w-100 artist-list-text-wrapper">
+                        <div class="col col-sm-9 col-md-6 col-xl-5 content b">
+                            <p class="pt-2">
+                            Location: London, United Kingdom <br> 
+                            Key dates: February 10 - April 5, 2025 <br>
+                            Tickets: £18. Available online at <br>
+                            <a href="https://www.nationalgallery.org.uk/">www.nationalgallery.org.uk</a>
                             </p>
                         </div>
-                        <div class="content content2">
+                        <div class="col col-sm-12 col-md-10 col-xl-7 content b a">
                             <h5>Overview</h5>
                             <p>
-                            "Sculptures of the Future" is a forward-thinking exhibition showcasing 10 groundbreaking sculptors who are reimagining the future through innovative and visionary sculptural works. The exhibition explores how art can reflect and respond to rapid advancements in technology, artificial intelligence, environmental changes, and societal evolution. <a href="#">Special Events & Activities <span>🡥</span></a>
+                                Orange Collectivo was born out of the desire to create a space where creativity had no limits, a place where ideas could germinate and grow organically, like an orange growing at its own pace. It was conceived by a group of emerging artists who, like the fruit that inspires our brand, shared a fresh and vibrant vision of art and visual culture. <br><a href="#">Special Events & Activities <span>🡥</span></a>
                             </p>
                         </div>
-                        <div class="content content3">
-                            <h5>Featured Sculptors:</h5>
+                        <div class="col col-sm-5 col-md-3 content b b2">
+                            <h5>Featured Artists:</h5>
                         </div>
-                        <div class="content content4">
+                        <div class="col col-sm-12 col-md-10 col-xl-7 content c">
                             <h5 data-number="01">Olivia Wu</h5>
                             <p data-work="Symbiosis">
-                            Olivia Wu's interactive sculptures explore the harmony between nature and technology. Her kinetic pieces react to the environment, evolving and changing with light and movement, reflecting the symbiotic future of nature and innovation.
+                                Olivia Wu's interactive sculptures explore the harmony between nature and technology. Her kinetic pieces react to the environment, evolving and changing with light and movement, reflecting the symbiotic future of nature and innovation.
                             <a href="#">| <span>+</span> |</a>
                             </p>
                         </div>
-                        <div class="content content4">
+                        <div class="col col-sm-12 col-md-10 col-xl-7 content c">
                             <h5 data-number="02">Ethan Ramos</h5>
                             <p data-work="Digital Metamorphosis">
-                            Ethan Ramos's sculptures blur the lines between the physical and virtual worlds, using augmented reality to transform his work in real-time. These sculptures explore the concept of transformation in a future dominated by digital evolution.
+                                Ethan Ramos's sculptures blur the lines between the physical and virtual worlds, using augmented reality to transform his work in real-time. These sculptures explore the concept of transformation in a future dominated by digital evolution.
                             <a href="#">| <span>+</span> |</a>
                             </p>
                         </div>
-                        <div class="content content4">
+                        <div class="col col-sm-12 col-md-10 col-xl-7 content c">
                             <h5 data-number="03">Maya Patel</h5>
                             <p data-work="Roots and Machines">
-                            Maya Patel's work is a fusion of organic forms and mechanical elements, using sustainable materials and futuristic technologies to create pieces that evoke the interconnectedness of humanity and technology in the future.
+                                Maya Patel's work is a fusion of organic forms and mechanical elements, using sustainable materials and futuristic technologies to create pieces that evoke the interconnectedness of humanity and technology in the future.
                             <a href="#">| <span>+</span> |</a>
                             </p>
                         </div>
-                        <div class="content content4">
+                        <div class="col col-sm-12 col-md-10 col-xl-7 content c">
                             <h5 data-number="04">Sebastian Álvarez</h5>
                             <p data-work="Mechanical Consciousness">
-                            Sebastian Álvarez's large-scale sculptures reflect the merging of human consciousness with machines. His works incorporate robotic elements that move and respond to the environment, challenging our understanding of what it means to be human.
+                                Sebastian Álvarez's large-scale sculptures reflect the merging of human consciousness with machines. His works incorporate robotic elements that move and respond to the environment, challenging our understanding of what it means to be human.
                             <a href="#">| <span>+</span> |</a>
                             </p>
                         </div>
-                        <div class="content content4">
+                        <div class="col col-sm-12 col-md-10 col-xl-7 content c">
                             <h5 data-number="05">Imani Okafor</h5>
                             <p data-work="Beyond the Horizon">
-                            Imani Okafor's sculptures are deeply influenced by African heritage, exploring how traditional cultures will adapt and evolve in the face of technological advancements. Her work uses futuristic materials like 3D-printed metals and composites, with an emphasis on sustainability.
-                            <a href="#">| <span>+</span> |</a>
-                            </p>
-                        </div>
-                        <div class="content content4">
-                            <h5 data-number="06">Hannah Krause</h5>
-                            <p data-work="Echoes of Tomorrow">
-                            Hannah Krause's abstract sculptures are made from recycled electronic waste, symbolizing a world where technology's life cycle is cyclical, and waste is transformed into art. Her pieces provoke thought about the impact of consumerism and the future of digital disposal.
-                            <a href="#">| <span>+</span> |</a>
-                            </p>
-                        </div>
-                        <div class="content content4">
-                            <h5 data-number="07">Javier Torres</h5>
-                            <p data-work="Evolving Forms">
-                            Javier Torres creates dynamic, ever-evolving sculptures using flexible materials and sensors, which react to the viewer's movement. His work represents the unpredictability of the future, where change is constant and inevitable.
-                            <a href="#">| <span>+</span> |</a>
-                            </p>
-                        </div>
-                        <div class="content content4">
-                            <h5 data-number="08">Isabella Zhang</h5>
-                            <p data-work="AI and Human">
-                            Isabella Zhang explores the relationship between humans and artificial intelligence through sculptures that use sensors and artificial intelligence to alter their form based on human interaction, symbolizing the merging of human intellect and machine.
-                            <a href="#">| <span>+</span> |</a>
-                            </p>
-                        </div>
-                        <div class="content content4">
-                            <h5 data-number="09">Luca Mendez</h5>
-                            <p data-work="Nano-Creations">
-                            Luca Mendez works with nanoscale technology to create sculptures that exist on a microscopic level. These sculptures reflect the potential of nanotechnology in the future, exploring themes of microscopic evolution and growth.
-                            <a href="#">| <span>+</span> |</a>
-                            </p>
-                        </div>
-                        <div class="content content4">
-                            <h5 data-number="10">Keira Robinson</h5>
-                            <p data-work="Futuristic Utopia">
-                            Keira Robinson creates monumental sculptures that envision a utopian future. Her works incorporate sustainable materials and integrate with natural environments, symbolizing the potential for harmonious cohabitation between humanity and nature in the future.
+                                Imani Okafor's sculptures are deeply influenced by African heritage, exploring how traditional cultures will adapt and evolve in the face of technological advancements. Her work uses futuristic materials like 3D-printed metals and composites, with an emphasis on sustainability.
                             <a href="#">| <span>+</span> |</a>
                             </p>
                         </div>
@@ -128,161 +153,213 @@
                 <div class="artist-list-gallery">
                     <div class="artist-list-gallery-wrapper">
                         <div class="figure-wrapper">
-                            <a href="#">
-                                <figure class="artist-list-gallery-figure">
-                                        <img src="images/1.jpg" alt="none" class="artist-list-gallery-image">
-                                        <img src="images/1.jpg" alt="none" class="artist-list-gallery-image img-n">
-                                        <div class="noise"></div>
-                                        <div class="light"></div>
-                                        <div class="number">[01 / 10]</div>
+                                <figure class="artist-list-gallery-figure primero">
+                                    <img src="images/mesh-gradient-1.png" alt="Archive" class="artist-list-gallery-image text-center">
+                                    <svg id="fil-archive">
+                                        <filter id="noise-filter">
+                                            <feTurbulence type="fractalNoise" baseFrequency="1.04" numOctaves="5.2" stitchTiles="stitch"></feTurbulence>
+                                            <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                                            <feComponentTransfer>
+                                                <feFuncR type="linear" slope="1.69"></feFuncR>
+                                                <feFuncG type="linear" slope="1.69"></feFuncG>
+                                                <feFuncB type="linear" slope="1.69"></feFuncB>
+                                                <feFuncA type="linear" slope="0.51"></feFuncA>
+                                            </feComponentTransfer>
+                                            <feComponentTransfer>
+                                                <feFuncR type="linear" slope="1.77" intercept="-0.39"/>
+                                                <feFuncG type="linear" slope="1.77" intercept="-0.39"/>
+                                                <feFuncB type="linear" slope="1.77" intercept="-0.39"/>
+                                            </feComponentTransfer>
+                                        </filter>
+                                        <rect width="100%" height="100%" filter="url(#noise-filter)"></rect>
+                                    </svg>
+                                    <figcaption class="number title pe-5 mx-4">Our Artists <br>Archive</figcaption>
                                 </figure>
-                            </a>
-                            <figcaption class="figcaption-2"><span>L'Enlèvement d'Andromède par Persée. 1679 / 1684</span><span>Puget, Pierre. France</span></figcaption>
-                        </div>
-                        <div class="figure-wrapper">
+                            </div>
+                        <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                        <img src="images/2.jpg" alt="none" class="artist-list-gallery-image">
-                                        <img src="images/2.jpg" alt="none" class="artist-list-gallery-image img-n">
-                                        <div class="noise"></div>
-                                        <div class="light"></div>
-                                        <div class="number">[02 / 10]</div>
-                                </figure>
-                            </a>
-                            <figcaption class="figcaption-2">Le Jupiter Olympien ou l'art de la sculpture antique</figcaption>
-                        </div>
-                        <div class="figure-wrapper">
-                            <a href="#">
-                                <figure class="artist-list-gallery-figure">
-                                    <img src="images/3.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/3.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/1.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/1.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
-                                    <div class="number">[03 / 10]</div>
+                                    <figcaption class="number">01/05</figcaption>
                                 </figure>
                             </a>
-                            <figcaption class="figcaption-2">Tirage du Zeus de Dresde. 1800 - 2000. <br> atelier de Dresde</figcaption>
+                            <div class="descript">2025. Nombre Artista</div>
                         </div>
-                        <div class="figure-wrapper">
+                        <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                    <img src="images/4.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/4.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/2.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/2.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
-                                    <div class="number">[04 / 10]</div>
+                                    <figcaption class="number">02/05</figcaption>
                                 </figure>
                             </a>
-                            <figcaption class="figcaption-2">Oedipe enfant rappelé à lavie par le berger Phorbasqui <br> l'a détaché de l'arbre. 1810 / 1818. France. Cartellier, Pierre</figcaption>
+                            <div class="descript">2025. Nombre Artista</div>
                         </div>
-                        <div class="figure-wrapper">
+                        <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                    <img src="images/5.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/5.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/3.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/3.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
-                                    <div class="number">[05 / 10]</div>
+                                    <figcaption class="number">03/05</figcaption>
                                 </figure>
                             </a>
-                            <figcaption class="figcaption-2">Tirage du Zeus de Dresde. 1800 - 2000. <br> atelier de Dresde</figcaption>
+                            <div class="descript">2025. Nombre Artista</div>
                         </div>
-                        <div class="figure-wrapper">
-                            <a href="a">
-                                <figure class="artist-list-gallery-figure">
-                                    <img src="images/6.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/6.jpg" alt="none" class="artist-list-gallery-image img-n">
-                                    <div class="noise"></div>
-                                    <div class="light"></div>
-                                    <div class="number">[06 / 10]</div>
-                                </figure>
-                            </a>
-                            <figcaption class="figcaption-2">Athéna plante un olivier, Poseidon fait jaillir un lacsalé <br> devant Zeus.
-                                Farinati, Paolo</figcaption>
-                        </div>
-                        <div class="figure-wrapper">
+                        <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                    <img src="images/7.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/7.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/4.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/4.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
-                                    <div class="number">[07 / 10]</div>
+                                    <figcaption class="number">04/05</figcaption>
                                 </figure>
                             </a>
-                            <figcaption class="figcaption-2">Statue. -333 / -200. Lieu de découverte : Chypre</figcaption>
+                            <div class="descript">2025. Nombre Artista</div>
                         </div>
-                        <div class="figure-wrapper">
+                        <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                    <img src="images/8.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/8.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/5.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/5.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
-                                    <div class="number">[08 / 10]</div>
+                                    <figcaption class="number">05/05</figcaption>
                                 </figure>
                             </a>
-                            <figcaption class="figcaption-2">Tirage du Zeus de Dresde. 1800 - 2000. <br> atelier de Dresde</figcaption>
+                            <div class="descript">2025. Nombre Artista</div>
                         </div>
-                        <div class="figure-wrapper">
-                            <a href="#">
-                                <figure class="artist-list-gallery-figure">
-                                    <img src="images/9.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/9.jpg" alt="none" class="artist-list-gallery-image img-n">
-                                    <div class="noise"></div>
-                                    <div class="light"></div>
-                                    <div class="number">[09 / 10]</div>
-                                </figure>
-                            </a>
-                            <figcaption class="figcaption-2">Tirage du Zeus de Dresde. 1800 - 2000. <br> atelier de Dresde</figcaption>
-                        </div>
-                        <div class="figure-wrapper">
-                            <a href="#">
-                                <figure class="artist-list-gallery-figure">
-                                    <img src="images/10.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/10.jpg" alt="none" class="artist-list-gallery-image img-n">
-                                    <div class="noise"></div>
-                                    <div class="light"></div>
-                                    <div class="number">[10 / 10]</div>
-                                </figure>
-                            </a>
-                            <figcaption class="figcaption-2">Projet pour une statueéquestre. <br>
-                                Puget, Pierre, attribué à</figcaption>
-                        </div>
-                        <div class="artist-list-gallery-info">
-                            <p>Sculpture works: A conversion between the classical and modern technology that provides an imaginary of the future. This is a selection of the works exhibited around the world.</p>
-                            <p>Visit the National Gallery of Modern Art in London and immerse yourself in a world of futuristic creativity. Book your tickets now and be part of this visionary journey into tomorrow!
-                            </p>
-                            <p class="artist-list-gallery-action">[GO TO THE GALLERY]</p>
+                        <div class="artist-gallery-info-wrapper d-flex justify-content-center align-items-center flex-column">
+                           <h2 class="text-center py-5 py-md-1">Meet us!!!</h2>
+                           <div class="artist-list-gallery-info d-flex flex-column">
+                                <p>We provide captivating design, interactive animations ,innovative filmmaking, reliable code, and immaculate project coordination. Whether you need a campaign built from scratch or assistance at a specific phase, we've got you covered.</p>
+                                <h2 class="text-center py-5 py-md-1">We represent today's world: progressive and engaged.</h2>
+                                <div class="artist-list-gallery-info d-flex flex-column">
+                                    <p>Art today reflects a progressive and engaged world, where creativity drives change and challenges conventions. It invites viewers to explore bold expressions and fresh perspectives that shape the evolving cultural landscape.</p>
+                                    <h5 class="align-self-end py-2 py-md-1"><a class="artist-list-gallery-action" href="#">GO TO THE GALLERY &#129138;</a></h5>
+                                </div>
+                            </div>
+                            <img src="images/image-piel-naranja.png" alt="peel orange" class="img-fluid peel d-none d-lg-block">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="scroll">
-            <p class="scroll-info">Scroll &#8628;</p>
-        </div>
+
+        <div class="scroll left"><h5>SCROLL &#129122;</h5></div>
+        <div class="scroll right"><h5>SCROLL &#129122;</h5></div>
     </main>
 
-     <!-- Segundo Canvas -->
-     <div id="scene2-container">
-        <canvas id="scene2"></canvas>
-        <div id="entradas">
-            <div id="central-element">
-                <a href="#">Comprar entradas</a>
+    <div class="cards">
+        <!-- About us -->
+        <div class="section2 card1">
+            <div class="container text-center align-items-start">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="col mb-5">About us</h1>
+                        <p class="mb-4">At Orange Collective we like to think of each project as an orange: full of possibilities to be explored, with a rind that protects what is valuable and an interior full of creativity waiting to be squeezed. We are a collective of artists, designers, filmmakers and programmers who seek, like the orange, to surprise, refresh and revitalise. Each piece we create is intended to offer something unique, a visual experience that awakens the senses and leaves a lasting impression.
+                        </p>
+                        <p>We specialise in fresh, vibrant and daring projects, always with the intention of breaking barriers and offering new perspectives. Like the orange in its nature, we believe in the power of the organic and the authentic. We are not afraid of criticism or experimentation; we know that true art is born when you take risks and challenge pre-established limits.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <p><a href="#" class="volver">Back &#8629;</a></p>
+        <!-- Segundo Canvas -->
+        <div class="section2 card2">
+            <div id="scene2-container">
+                <canvas id="scene2"></canvas>
+                <div id="departure">
+                    <div id="central-element-wrapper">
+                        <div id="central-element">
+                            <h5 class="text-center"><a href="#">Buy<br>Tickets</a></h5>
+                        </div>
+                        <div id="central-element-cover"></div>
+                    </div>
+                </div>
+                <h5><a href="#" class="back pe-3 pe-md-5"><span>&#129120;</span> Back</a></h5>
+            </div>
+        </div>
     </div>
 
-    <!-- Cargar la librería GSAP + ScrollTrigger -->
+    <footer class="text-center">
+        <div class="container-fluid border-top border-black py-3 px-5">
+          <!-- Top Section -->
+          <div class="row justify-content-betweend footer-content">
+            <div class="col d-flex flex-column align-items-start footer-section">
+                <a class="footer-brand" href="index.html">
+                    <span class="orange-brand">ORANGE</span>COLLECTIVE™
+                </a>
+              <div class="d-flex">
+                <a href="https://www.linkedin.com/" class="me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/" class="me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/" class="me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-tiktok" viewBox="0 0 16 16">
+                        <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                    </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Frase del footer -->
+            <div class="col mx-0 footer-section">
+                <h6>LET'S DO SOMETHING CREATIVE</h6>
+                <a class="footer-email px-3 py-1" href="mailto:info@orangecollective.com">info@orangecollective.com</a>
+            </div>
+
+            <!-- Links legales -->
+            <div class="col d-flex flex-column align-items-end footer-section">
+                <a href="#">Aviso legal</a>
+                <a href="#">Política de cookies</a>
+                <a href="#">Política de privacidad</a>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+
+    <!-- GSAP + ScrollTrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-    <!-- Cargar la librería Lenis.js -->
+    <script>
+    // Animación de la portada
+    let tlInit = gsap.timeline();
+    tlInit.from(".wel", { opacity: 0, y: -1000, rotate: 5, transformOrigin: "top left", duration: 1.3, ease: "elastic.inOut(0.55)"}, "0.8")
+          .to(".isgrad", { color: "transparent", duration: 0.8, ease: "power2.out"}, "+=1")
+          .to(".contenido-scroll", { backgroundColor: "#e2e2e2", duration: 0.5, ease: "power2.out" })
+          .from("#RotateOR", { y: 1000, scale: 0.8, duration: 2, ease: "power2.out"}, "+=0.5")
+          .from(".copy", { opacity: 0, duration: 0.5, ease: "power1.out" })
+          .from(".initScroll", { opacity: 0, duration: 0.5, ease: "power1.out", y: -50},"+=0.5");
+    </script>
+
+    <!-- Lenis.js -->
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
-    <!-- Cargar la librería Particles.js -->
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
@@ -292,7 +369,7 @@
                     value: 120,
                     density: { enable: true, value_area: 500 }
                 },
-                color: { value: "#fffabc" },
+                color: { value: "#000000" },
                 shape: {
                     type: "circle",
                     stroke: { width: 0, color: "#000000" }
@@ -306,7 +383,8 @@
                     random: true
                 },
                 line_linked: {
-                    enable: false
+                    enable: true,
+                    color: "#000000"
                 },
                 move: {
                     enable: true,
@@ -319,14 +397,18 @@
         });
     </script>
 
-    <!-- Cargar la librería Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+    <!-- GLTFLoader -->
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
 
     <script>
         // Escena 1
         const scene1 = new THREE.Scene();
         scene1.background = null;
-        const camera1 = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.01, 1000);
+
+        // Cámara
+        const camera1 = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
         const renderer1 = new THREE.WebGLRenderer({
             canvas: document.getElementById("scene1"),
             alpha: true,
@@ -334,72 +416,85 @@
         renderer1.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer1.setSize(window.innerWidth, window.innerHeight);
 
-        // Luz
-        renderer1.shadowMap.enabled = false;
         const ambientLight1 = new THREE.AmbientLight(0xffffff, 0.8);
         scene1.add(ambientLight1);
 
-        //Texto
-        const loader1 = new THREE.FontLoader();
-        loader1.load("Red_Hat_Text_Regular.json", (font) => {
-            const text = "Sculptures of the future".toUpperCase();
-            const letterMeshes = [];
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(10, 10, 10).normalize();
+        directionalLight.castShadow = true;
+        scene1.add(directionalLight);
 
-            for (let i = 0; i < text.length; i++) {
-                const letter = text[i];
-                const shapes = font.generateShapes(letter, 13);
-                const geometry = new THREE.ExtrudeGeometry(shapes, {
-                    depth: 1,
-                    bevelEnabled: false,
+        const loader = new THREE.GLTFLoader();
+        let mixer;
+        let model;
+
+        loader.load(
+            "orange_fruit.glb",
+            function (gltf) {
+                model = gltf.scene;
+                model.scale.set(0.1, 0.1, 0.1);
+                model.rotation.x = Math.PI * 2;
+                scene1.add(model);
+
+                function animate() {
+                    requestAnimationFrame(animate);
+                    renderer1.render(scene1, camera1);
+                }
+                animate();
+
+                gsap.registerPlugin(ScrollTrigger);
+
+                model.position.set(0, -5, 0);
+
+                let tlScroll = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: renderer1.domElement,
+                        start: "top top",
+                        end: "+=1500%",
+                        scrub: true,
+                        onUpdate: function () {
+                            camera1.updateProjectionMatrix();
+                        }
+                    },
                 });
 
-                geometry.computeVertexNormals();
-
-                const textMaterial = new THREE.MeshStandardMaterial({ color: 0xefefef });
-                const textMesh = new THREE.Mesh(geometry, textMaterial);
-
-                scene1.add(textMesh);
-                letterMeshes.push(textMesh);
-            }
-
-            // Velocidad
-            const angularSpeed = 0.0006;
-            const radius = (window.innerWidth * 0.5) / 1;
-
-            let needsUpdate = true;
-
-            function animateScene1() {
-                requestAnimationFrame(animateScene1);
-                if (!needsUpdate) return;
-
-                const time = Date.now() * -angularSpeed;
-                letterMeshes.forEach((letterMesh, index) => {
-                    const angleOffset = time + (index * Math.PI / (letterMeshes.length * 6));
-                    const x = radius * Math.cos(angleOffset);
-                    const z = radius * Math.sin(angleOffset);
-                    letterMesh.position.set(x, 0, z);
-                    letterMesh.lookAt(0, 0, 0);
+                tlScroll.to(camera1.position, {
+                    z: 30,
+                    y: -30,
+                    ease: "power1.inOut",
+                    duration: 40,
                 });
 
-                camera1.position.z = 0;
-                camera1.position.y = -10;
-                renderer1.render(scene1, camera1);
+                tlScroll
+                    .to(model.position, {
+                        x: -8,
+                        duration: 15,
+                        ease: "sine.inOut",
+                    }, 0)
+                    .to(model.position, {
+                        x: 10,
+                        duration: 15,
+                        ease: "sine.inOut",
+                    }, 15);
+
+                tlScroll.to(model.rotation, {
+                    x: Math.PI * 2 * 2,
+                    y: Math.PI * 2 * 2,
+                    duration: 40,
+                    ease: "power1.inOut",
+                }, 0);
             }
+        );
 
-            document.addEventListener("visibilitychange", () => {
-                needsUpdate = document.visibilityState === "visible";
-            });
-
-            animateScene1();
-        });
+        camera1.position.set(0, 1, 10);
+        camera1.lookAt(0, 1, 0);
 
         window.addEventListener("resize", () => {
             renderer1.setSize(window.innerWidth, window.innerHeight);
             camera1.aspect = window.innerWidth / window.innerHeight;
             camera1.updateProjectionMatrix();
-            needsUpdate = true;
         });
-
+        // "orange fruit" (https://skfb.ly/NpJE) by polyplant3d is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
         //Escena 2
         const scene2 = new THREE.Scene();
@@ -412,8 +507,8 @@
 
         //Texto
         const loader2 = new THREE.FontLoader();
-        loader2.load("Red_Hat_Text_Regular.json", (font) => {
-            const text = "[Sculptures of the Future]".toUpperCase();
+        loader2.load("Manrope_Light_Regular.json", (font) => {
+            const text = "Come see us live!".toUpperCase();
             const letterMeshes = [];
 
             for (let i = 0; i < text.length; i++) {
@@ -421,11 +516,11 @@
             
                 const textGeometry = new THREE.TextGeometry(letter, {
                     font: font,
-                    size: 10,
+                    size: 15,
                     height: 1,
                 });
 
-                const textMaterial = new THREE.MeshBasicMaterial({ color: 0x7f90ff });
+                const textMaterial = new THREE.MeshBasicMaterial({ color: 0x060000 });
                 const textMesh = new THREE.Mesh(textGeometry, textMaterial);
                 scene2.add(textMesh);
                 letterMeshes.push(textMesh);
@@ -455,7 +550,7 @@
                 });
 
                 camera2.position.z = 300;
-                camera2.position.y = 100;
+                camera2.position.y = 150;
                 camera2.lookAt(scene2.position);
 
                 renderer2.render(scene2, camera2);
