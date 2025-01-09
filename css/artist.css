@@ -1,0 +1,211 @@
+
+.artista {
+    margin-top: 10em;
+    margin-left: 3em;
+}
+
+.artistainicio h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-weight: 700;
+    font-size: 7vw;
+    text-align: start;
+}
+
+.social-icons i {
+    transition: transform 0.3s ease;
+}
+
+.social-icons i:hover {
+    transform: scale(1.2);
+    color: #FF6D0B;
+}
+
+.bio span {
+    display: inline;
+}
+
+.nombre span {
+    display: inline-block;
+}
+
+.limit, .social-icons {
+    overflow: hidden;
+}
+
+/* VIDEO PRINCIPAL */
+.video-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.video-container {
+    width: 90%;
+    max-width: 1920px;
+    border: 4px solid #000; /* Delineado negro */
+    border-radius: 20px; /* Bordes redondeados */
+    overflow: hidden;
+    transform: perspective(800px);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* GALERÍA MULTIMEDIA DINÁMICA */
+.dynamic-gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.gallery-grid {
+    width: 90%;
+    max-width: 1920px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+/* ESTILO GENERAL DE LOS ITEMS */
+.gallery-item {
+    border: 3px solid #000; /* Delineado negro */
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .gallery-item:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+} */
+
+/* VIDEOS E IMÁGENES DENTRO DE LOS ITEMS */
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* TIPOS DE ELEMENTOS EN LA GALERÍA */
+/* Horizontal (16:9) */
+.gallery-item.horizontal {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* Vertical (16:9) */
+.gallery-item.vertical {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* Cuadrado */
+.gallery-item.square {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* ELEMENTOS MEDIANOS DESTACADOS */
+/* Horizontal Mediano */
+.gallery-item.horizontal.medium {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* Vertical Mediano */
+.gallery-item.vertical.medium {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+
+/* TEXTO EN HOVER */
+.gallery-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+   
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 99;
+}
+
+.gallery-item:hover .gallery-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+/* ANIMACIONES ADICIONALES */
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #FF6D0B, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.byn video {
+    filter: grayscale();
+}
+
+.byn img {
+    filter: grayscale();
+}
+
+
+
+
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-auto-rows: 180px;
+    }
+    .gallery-item.horizontal.medium,
+    .gallery-item.vertical.medium {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .gallery-text {
+        font-size: 12px;
+    }
+}
