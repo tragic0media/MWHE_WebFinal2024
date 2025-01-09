@@ -1,0 +1,150 @@
+
+/* -- LET'S TALK -- */
+.lets_talk{
+    padding-top: 8rem;
+}
+
+.lets_talk h1{
+    color:#FF6D0B;
+    font-weight: 700;
+    font-size: 5rem;
+    white-space: nowrap;
+}
+
+.lets_talk p,a{
+    font-weight: 700;
+}
+
+.circle {
+    width: 9rem;
+    height: 9rem;
+    border: 2px solid #060000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0);
+    transition: transform 0.3s ease;
+    transform: scale(0.9);
+}
+
+.circle:hover {
+    transform: scale(1);
+    background: #FF6D0B;
+    border: 2px solid #FF6D0B;
+    color: #060000;
+    font-weight: 700;
+}
+
+.we_do_with{
+    padding-top: 11rem;
+}
+
+.we_do_section, .with_section {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.options p {
+    font-weight: 400;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    margin: 1rem 0;
+    transition: opacity 0.5s;
+    white-space: nowrap;
+}
+
+.options p.active {
+    font-weight: 700;
+    opacity: 1;
+    color:#FF6D0B;
+}
+
+/* -- CONTACT --*/
+
+.contact_us {
+    position: relative;
+    text-align: center;
+    margin-top: 0;
+}
+
+.contact_us h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-weight: 700;
+    font-size: 7vw;
+}
+
+.contact_us img {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    width: 40%;
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    border: 0.3vw solid rgb(6, 0, 0);
+    border-radius: 4rem;
+    background-color: #f9f9f9;
+    font-size: 2vw;
+    padding: 1vw 2vw;
+    margin-bottom: 7vw;
+    margin-top: 3vw;
+    z-index: 3;
+    position: relative;
+}
+
+.btn:hover {
+    border: 0.3vw solid #060000;
+    background-color: #f9f9f9;
+    color: #FF6D0B;
+    font-weight: 700;
+}
+
+.btn:active {
+    border: 0.3vw solid #FF6D0B !important;
+    background-color: #f9f9f9 !important;
+    color: #FF6D0B !important;
+    font-weight: 700;
+}
+
+
+
+
+@media (max-width: 767px){
+
+    .lets_talk h1{
+        font-size: 9vw;
+    }
+
+    .we_do_section, .with_section {
+        font-size: 5vw;
+    }
+
+    .we_do_with{
+        padding-top: 20vh;
+    }
+
+    .options p{
+        font-size: 4vw;
+    }
+
+    .contact_us{
+        margin-top: 40vw;
+    }
+
+    .contact_us a{
+        font-size: 2.5vw;
+    }
+    .contact_us h5{
+        font-size: 2.5vw;
+    }
+}
