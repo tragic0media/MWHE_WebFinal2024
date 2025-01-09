@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const lenis = new Lenis({
         smooth: true,
         smoothWheel: true,
-        wheelMultiplier: 0.2,
+        wheelMultiplier: 0.8,
     });
 
     function raf(time) {
