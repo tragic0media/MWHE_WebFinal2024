@@ -295,13 +295,17 @@ footer .container-fluid {
     margin-right: .5rem;
 }
 
-img {
+img .vi {
     filter: brightness(0.75) contrast(1.6) sepia(0.1) hue-rotate(280deg);
     transition: filter 1s;
     position: relative;
     mix-blend-mode: luminosity;
     mask-image: radial-gradient(circle, rgb(75, 168, 145) 55%, transparent 100%);
     -webkit-mask-image: radial-gradient(circle, rgb(75, 168, 145) 55%, transparent 100%);
+}
+
+.vi {
+    transform: scale(1.5) translateY(15%);
 }
 
 .noise {
@@ -344,7 +348,7 @@ img {
     right: 0;
     padding: 0.9em 0.6em;
     z-index: 2;
-    font-size: 1.5vw;
+    font-size: clamp(3rem, calc(100vw / 1920 * 21), 15rem);
 }
 
 .number.title {

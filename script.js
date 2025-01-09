@@ -42,14 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // GSAP
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(".artist-list-gallery-image", {
-        filter: "brightness(1) contrast(1.3)",
-        duration: 1.5,
-        yoyo: true,
-        repeat: -1,
-        ease: "power1.inOut"
-    });
-
     gsap.to(".light", {
         y: "1000%",
         duration: 6,
@@ -68,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const galleryFigures = gsap.utils.toArray(".artist-list-gallery-figure");
     const galleryFigcaption = gsap.utils.toArray(".descript");
-    const galleryImages = gsap.utils.toArray(".artist-list-gallery-image")
+    const galleryImages = gsap.utils.toArray(".parallax")
 
     galleryFigures.forEach((figure) => {
         const animation = gsap.to(figure, {
@@ -86,13 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     ScrollTrigger.matchMedia({
                         "(max-width: 576px)": () => {
-                            scaleStart = 0.6;
+                            scaleStart = 0.5;
                             yPosition = 75;
                         },
                     });
     
-                    const scale = gsap.utils.interpolate(scaleStart, 0.8, progress);
-                    const opacity = gsap.utils.interpolate(1, 0.5, progress);
+                    const scale = gsap.utils.interpolate(scaleStart, 0.75, progress);
+                    const opacity = gsap.utils.interpolate(1, 0.7, progress);
     
                     gsap.to(figure, {
                         scale: scale,
@@ -223,7 +215,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let tl3 = gsap.timeline({
         scrollTrigger: {
           trigger: ".cards",
-          markers: true,
           start: "top top",
           end: "+=1000",
           scrub: 2,
