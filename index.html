@@ -12,15 +12,6 @@
 </head>
 <body>
 
-    <div class="filter-noise"></div>
-    <div class="gradient"></div>
-    <div id="particles-js"></div>
-
-    <!-- Primer Canvas -->
-    <div id="scene1-container">
-        <canvas id="scene1"></canvas>
-    </div>
-
     <header>
         <nav class="navbar navbar-expand-md fixed-top">
             <div class="container-fluid py-4 px-5">
@@ -52,27 +43,74 @@
         </nav>
     </header>
 
+    <div class="ko fixed-top">
+            <div class="contenido-scroll d-flex justify-content-center align-items-center">
+                <div class="copy fixed-top d-none d-lg-block">©</div>
+                <div class="d-flex align-items-end justify-content-start initScroll-wrapper position-absolute"><p class="initScroll ms-4">SCROLL &#129123;</p></div>
+                <div class="recorte align-self-start align-self-lg-center"><h2 class="wel">WELCOME TO<span class="isgrad">(ORANGE COLLECTIVE)</span></h2></div>
+
+                <svg id="noice">
+                    <filter id="noise-filter">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.66" numOctaves="5.2" stitchTiles="stitch"></feTurbulence>
+                        <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                        <feComponentTransfer>
+                            <feFuncR type="linear" slope="1.57"></feFuncR>
+                            <feFuncG type="linear" slope="1.57"></feFuncG>
+                            <feFuncB type="linear" slope="1.57"></feFuncB>
+                            <feFuncA type="linear" slope="1"></feFuncA>
+                        </feComponentTransfer>
+                        <feComponentTransfer>
+                            <feFuncR type="linear" slope="3" intercept="-1.00"/>
+                            <feFuncG type="linear" slope="3" intercept="-1.00"/>
+                            <feFuncB type="linear" slope="3" intercept="-1.00"/>
+                        </feComponentTransfer>
+                    </filter>
+                    <rect width="100%" height="100%" filter="url(#noise-filter)"></rect>
+                </svg>
+                
+                <div class="ratio ratio-1x1 ratio-md-16x9 position-absolute RotateOR">
+                    <video id="RotateOR" autoplay loop muted playsinline class="w-100">
+                        <source src="models/RotationOR-0200.webm" type="video/webm">
+                        Your browser does not support HTML5 videos.
+                    </video>
+                </div>
+                <div class="d-flex flex-column justify-content-end align-items-center hero-badge position-absolute pb-5 pb-md-1">
+                    <p class="text-center">An artistic collective passionate about creating works that reflect a commitment to the world around us.</p>
+                    <p class="mt-0"><b>©</b>2025 ORANGE CO.</p>
+                </div>
+            </div>
+    </div>
+
+    <div class="filter-noise"></div>
+    <div class="gradient"></div>
+    <div id="particles-js"></div>
+
+    <!-- Primer Canvas -->
+    <div id="scene1-container">
+        <canvas id="scene1"></canvas>
+    </div>
+
     <main>
         <section class="artist-list">
             <div class="artist-list-wrapper">
                 <div class="container align-content-end vh-100 artist-list-text px-4">
                     <div class="row d-flex flex-nowrap gx-5 w-100 artist-list-text-wrapper">
                         <div class="col col-sm-9 col-md-6 col-xl-5 content b">
-                            <p>
-                            Location: The National Gallery of Modern Art, London, United Kingdom <br> 
-                            Dates: February 10 - April 5, 2025 <br>
+                            <p class="pt-2">
+                            Location: London, United Kingdom <br> 
+                            Key dates: February 10 - April 5, 2025 <br>
                             Tickets: £18. Available online at <br>
                             <a href="https://www.nationalgallery.org.uk/">www.nationalgallery.org.uk</a>
                             </p>
                         </div>
-                        <div class="col col-sm-12 col-md-10 col-xl-8 content b a">
+                        <div class="col col-sm-12 col-md-10 col-xl-7 content b a">
                             <h5>Overview</h5>
                             <p>
-                                We present a collection of innovative works by 5 artists who are reimagining the future through visionary sculptures. These artists push the boundaries of creativity, blending technology, sustainability, and art to shape the world of tomorrow. <a href="#">Special Events & Activities <span>🡥</span></a>
+                                Orange Collectivo was born out of the desire to create a space where creativity had no limits, a place where ideas could germinate and grow organically, like an orange growing at its own pace. It was conceived by a group of emerging artists who, like the fruit that inspires our brand, shared a fresh and vibrant vision of art and visual culture. <br><a href="#">Special Events & Activities <span>🡥</span></a>
                             </p>
                         </div>
                         <div class="col col-sm-5 col-md-3 content b b2">
-                            <h5>Featured Sculptors:</h5>
+                            <h5>Featured Artists:</h5>
                         </div>
                         <div class="col col-sm-12 col-md-10 col-xl-7 content c">
                             <h5 data-number="01">Olivia Wu</h5>
@@ -115,16 +153,34 @@
                 <div class="artist-list-gallery">
                     <div class="artist-list-gallery-wrapper">
                         <div class="figure-wrapper">
-                                <figure class="artist-list-gallery-figure">
-                                    <img src="images/logo_OC.png" alt="none" class="artist-list-gallery-image">
-                                    <figcaption class="number title">Our Artists</figcaption>
+                                <figure class="artist-list-gallery-figure primero">
+                                    <img src="images/mesh-gradient-1.png" alt="Archive" class="artist-list-gallery-image text-center">
+                                    <svg id="fil-archive">
+                                        <filter id="noise-filter">
+                                            <feTurbulence type="fractalNoise" baseFrequency="1.04" numOctaves="5.2" stitchTiles="stitch"></feTurbulence>
+                                            <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                                            <feComponentTransfer>
+                                                <feFuncR type="linear" slope="1.69"></feFuncR>
+                                                <feFuncG type="linear" slope="1.69"></feFuncG>
+                                                <feFuncB type="linear" slope="1.69"></feFuncB>
+                                                <feFuncA type="linear" slope="0.51"></feFuncA>
+                                            </feComponentTransfer>
+                                            <feComponentTransfer>
+                                                <feFuncR type="linear" slope="1.77" intercept="-0.39"/>
+                                                <feFuncG type="linear" slope="1.77" intercept="-0.39"/>
+                                                <feFuncB type="linear" slope="1.77" intercept="-0.39"/>
+                                            </feComponentTransfer>
+                                        </filter>
+                                        <rect width="100%" height="100%" filter="url(#noise-filter)"></rect>
+                                    </svg>
+                                    <figcaption class="number title pe-5 mx-4">Our Artists <br>Archive</figcaption>
                                 </figure>
-                        </div>
+                            </div>
                         <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                    <img src="images/1.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/1.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/1.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/1.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
                                     <figcaption class="number">01/05</figcaption>
@@ -135,8 +191,8 @@
                         <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                    <img src="images/2.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/2.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/2.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/2.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
                                     <figcaption class="number">02/05</figcaption>
@@ -147,8 +203,8 @@
                         <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                    <img src="images/3.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/3.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/3.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/3.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
                                     <figcaption class="number">03/05</figcaption>
@@ -159,8 +215,8 @@
                         <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                    <img src="images/4.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/4.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/4.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/4.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
                                     <figcaption class="number">04/05</figcaption>
@@ -171,8 +227,8 @@
                         <div class="figure-wrapper d-flex flex-column align-items-center">
                             <a href="#">
                                 <figure class="artist-list-gallery-figure">
-                                    <img src="images/5.jpg" alt="none" class="artist-list-gallery-image">
-                                    <img src="images/5.jpg" alt="none" class="artist-list-gallery-image img-n">
+                                    <img src="images/5.jpg" alt="Art work" class="artist-list-gallery-image">
+                                    <img src="images/5.jpg" alt="Art work" class="artist-list-gallery-image img-n">
                                     <div class="noise"></div>
                                     <div class="light"></div>
                                     <figcaption class="number">05/05</figcaption>
@@ -180,16 +236,20 @@
                             </a>
                             <div class="descript">2025. Nombre Artista</div>
                         </div>
-                        <div class="artist-gallery-info-wrapper">
-                            <h2 class="text-center py-5 py-md-1">We represent today's world: progressive and engaged.</h2>
-                            <div class="artist-list-gallery-info d-flex flex-column">
-                                <p>Art today reflects a progressive and engaged world, where creativity drives change and challenges conventions. It invites viewers to explore bold expressions and fresh perspectives that shape the evolving cultural landscape.</p>
-                                <h5 class="align-self-end py-2 py-md-1"><a class="artist-list-gallery-action" href="#">GO TO THE GALLERY &#129138;</a></h5>
+                        <div class="artist-gallery-info-wrapper d-flex justify-content-center align-items-center flex-column">
+                           <h2 class="text-center py-5 py-md-1">Meet us!!!</h2>
+                           <div class="artist-list-gallery-info d-flex flex-column">
+                                <p>We provide captivating design, interactive animations ,innovative filmmaking, reliable code, and immaculate project coordination. Whether you need a campaign built from scratch or assistance at a specific phase, we've got you covered.</p>
+                                <h2 class="text-center py-5 py-md-1">We represent today's world: progressive and engaged.</h2>
+                                <div class="artist-list-gallery-info d-flex flex-column">
+                                    <p>Art today reflects a progressive and engaged world, where creativity drives change and challenges conventions. It invites viewers to explore bold expressions and fresh perspectives that shape the evolving cultural landscape.</p>
+                                    <h5 class="align-self-end py-2 py-md-1"><a class="artist-list-gallery-action" href="#">GO TO THE GALLERY &#129138;</a></h5>
+                                </div>
                             </div>
+                            <img src="images/image-piel-naranja.png" alt="peel orange" class="img-fluid peel d-none d-lg-block">
                         </div>
                     </div>
                 </div>
-                
             </div>
         </section>
 
@@ -259,9 +319,21 @@
         </div>
     </footer>
 
+
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+    // Animación de la portada
+    let tlInit = gsap.timeline();
+    tlInit.from(".wel", { opacity: 0, y: -1000, rotate: 5, transformOrigin: "top left", duration: 1.3, ease: "elastic.inOut(0.55)"}, "0.8")
+          .to(".isgrad", { color: "transparent", duration: 0.8, ease: "power2.out"}, "+=1")
+          .to(".contenido-scroll", { backgroundColor: "#e2e2e2", duration: 0.5, ease: "power2.out" })
+          .from("#RotateOR", { y: 1000, scale: 0.8, duration: 2, ease: "power2.out"}, "+=0.5")
+          .from(".copy", { opacity: 0, duration: 0.5, ease: "power1.out" })
+          .from(".initScroll", { opacity: 0, duration: 0.5, ease: "power1.out", y: -50},"+=0.5");
+    </script>
 
     <!-- Lenis.js -->
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -404,6 +476,7 @@
             camera1.aspect = window.innerWidth / window.innerHeight;
             camera1.updateProjectionMatrix();
         });
+        // "orange fruit" (https://skfb.ly/NpJE) by polyplant3d is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
         //Escena 2
         const scene2 = new THREE.Scene();
@@ -417,7 +490,7 @@
         //Texto
         const loader2 = new THREE.FontLoader();
         loader2.load("Manrope_Light_Regular.json", (font) => {
-            const text = "Sculptures of the Future".toUpperCase();
+            const text = "Come see us live!".toUpperCase();
             const letterMeshes = [];
 
             for (let i = 0; i < text.length; i++) {
@@ -449,7 +522,7 @@
 
                 const angle = -angularSpeed * Date.now();
                 letterMeshes.forEach((letterMesh, index) => {
-                    const angleOffset = angle + (index * Math.PI / (letterMeshes.length * 1.3));
+                    const angleOffset = angle + (index * Math.PI / (letterMeshes.length * 1.5));
                     const x = radius * Math.cos(angleOffset);
                     const z = radius * Math.sin(angleOffset);
                     const y = waveAmplitude * Math.sin(waveFrequency * angleOffset);

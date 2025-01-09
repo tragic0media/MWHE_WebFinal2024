@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     lenisHeader = new Lenis({
         lerp: 0.08,
-        wheelMultiplier: 1.2,
+        wheelMultiplier: 1,
     });
 
     lenisHeader.on('scroll', ScrollTrigger.update);
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     addEventListener()
     };
 
-    const goToTop = document.querySelector(".artist-list-gallery-action");
+    const goToTop = document.querySelector(".back");
 
     const addEventListener = () => {
         goToTop.addEventListener("click", () => lenisHeader.scrollTo(1, {
@@ -36,9 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }));
     };
 
-    window.onload = () => {
-        initLenisHeader();
-    };
+    initLenisHeader();
+
 
     // GSAP
     gsap.registerPlugin(ScrollTrigger);
@@ -69,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const galleryFigures = gsap.utils.toArray(".artist-list-gallery-figure");
     const galleryFigcaption = gsap.utils.toArray(".descript");
+    const galleryImages = gsap.utils.toArray(".artist-list-gallery-image")
 
     galleryFigures.forEach((figure) => {
         const animation = gsap.to(figure, {
@@ -86,12 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     ScrollTrigger.matchMedia({
                         "(max-width: 576px)": () => {
-                            scaleStart = 0.5;
+                            scaleStart = 0.6;
                             yPosition = 75;
                         },
                     });
     
-                    const scale = gsap.utils.interpolate(scaleStart, 0.7, progress);
+                    const scale = gsap.utils.interpolate(scaleStart, 0.8, progress);
                     const opacity = gsap.utils.interpolate(1, 0.5, progress);
     
                     gsap.to(figure, {
@@ -122,7 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
         figure.animation = animation;
     });
     
-    
     window.addEventListener("resize", () => {
         galleryFigures.forEach((figure) => {
             if (figure.animation) {
@@ -134,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     galleryFigcaption.forEach((figcaption) => {
         gsap.to(figcaption, {
-            y: -15,
+            y: 5,
             scrollTrigger: {
                 trigger: figcaption,
                 start: "top 80%",
@@ -148,6 +147,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         overwrite: "auto",
                     });
                 },
+            }
+        });
+    });
+
+    galleryImages.forEach((image) => {
+        gsap.to(image, {
+            scale: 1.1,
+            y: 20,
+            duration: 1,
+            scrollTrigger: {
+                trigger: image,
+                start: "top 80%",
+                end: "bottom 30%",
+                scrub: 1,
             }
         });
     });
@@ -174,4 +187,38 @@ document.addEventListener("DOMContentLoaded", function () {
             scrub: 0.5,
         },
     });
+
+    window.addEventListener("scroll", function() {
+        const contenido = document.querySelector(".contenido-scroll");
+        const koDiv = document.querySelector(".ko");
+        
+        const scrollTop = window.scrollY;
+    
+        if (scrollTop > 100) {
+          contenido.style.opacity = 0;
+          koDiv.style.visibility = "hidden";
+        } else {
+          contenido.style.opacity = 1;
+          koDiv.style.visibility = "visible";
+        }
+    });
+
+    const section = document.querySelector(".artist-gallery-info-wrapper");
+    const img = document.querySelector(".peel");
+    const tlOne = gsap.timeline({ paused: true });
+
+    tlOne.fromTo(img, { y: 0 },
+        { y: "100vh",
+        duration: 1.5,
+        ease: "none" }, 0);
+
+    ScrollTrigger.create({
+        animation: tlOne,
+        trigger: section,
+        start: "top 20%",
+        end: "bottom center",
+        scrub: true,
+    });
+
+
 });
