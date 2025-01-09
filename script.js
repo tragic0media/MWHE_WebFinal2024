@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     lenisHeader = new Lenis({
         lerp: 0.08,
-        wheelMultiplier: 1,
+        wheelMultiplier: 0.95,
     });
 
     lenisHeader.on('scroll', ScrollTrigger.update);
@@ -178,10 +178,10 @@ document.addEventListener("DOMContentLoaded", function () {
         ScrollTrigger.refresh();
     });
 
-    gsap.from("#scene2-container", {
-        y: -200,
+    gsap.from(".artist-list-gallery-info", {
+        y: 80,
         scrollTrigger: {
-            trigger: "#scene2-container",
+            trigger: ".artist-list-gallery-info",
             start: "top bottom",
             end: "top top",
             scrub: 0.5,
@@ -220,5 +220,29 @@ document.addEventListener("DOMContentLoaded", function () {
         scrub: true,
     });
 
+    let tl3 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".cards",
+          markers: true,
+          start: "top top",
+          end: "+=1000",
+          scrub: 2,
+          pin: true,
+          pinSpacing: true,
+          ease: "power4.out"
+        }
+      });
+      
+      tl3.from(".card1", {
+        yPercent: 100,
+        scale: 0.8,
+        opacity: 0.5,
+      });
+
+      tl3.from(".card2", {
+        yPercent: 100,
+        scale: 0.8,
+        opacity: 0.5,
+      });
 
 });
