@@ -18,7 +18,6 @@ a {
 a:hover {
     text-decoration: none;
     color:#FF6D0B;
-    text-decoration: underline;
 }
 
 /* -- BACKGROUND -- */
@@ -40,7 +39,7 @@ a:hover {
         height: 100%;
         filter: invert(1);
         background: url(../images/nnnoise-2.svg);
-        opacity: 0.9;
+        opacity: 1;
     }
 }
 
@@ -67,9 +66,6 @@ a:hover {
 /* -- NAV BAR -- */
 .navbar{
     background: linear-gradient(rgba(226, 226, 226, 0.7) 0%, rgba(226, 226, 226, 0.7) 70%, rgba(0, 0, 0, 0));
-
-.navbar {
-    background-color: transparent;
 }
 
 .orange-brand{
@@ -100,7 +96,6 @@ a:hover {
 
 .navbar-nav{
     background-color: #f9f9f9;
-    background-color: #f9f9f964;
     border: 2px solid rgb(6, 0, 0);
     border-radius: 30px;
 }
@@ -130,7 +125,6 @@ footer svg:hover{
 
 .footer-brand:hover{
     color: #060000;
-    background-color: #ffffff94;
 }
   
 footer h6 {
