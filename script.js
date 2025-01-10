@@ -225,7 +225,6 @@ document.addEventListener("DOMContentLoaded", function () {
           pin: true,
           pinSpacing: true,
           ease: "power4.out",
-          markers: true
         }
       });
       
