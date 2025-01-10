@@ -221,11 +221,11 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".cards",
           start: "top top",
-          end: "+=1500",
+          end: "+=1000",
           scrub: 1.5,
           pin: true,
           pinSpacing: true,
-          ease: "none",
+          ease: "power2.out",
         }
       });
       
