@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     lenisHeader = new Lenis({
         lerp: 0.08,
         wheelMultiplier: 0.95,
+        touchMultiplier: 0.9
     });
 
     lenisHeader.on('scroll', ScrollTrigger.update);
