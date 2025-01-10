@@ -222,10 +222,10 @@ document.addEventListener("DOMContentLoaded", function () {
           trigger: ".cards",
           start: "top top",
           end: "+=1000",
-          scrub: 1,
+          scrub: 1.5,
           pin: true,
           pinSpacing: true,
-          ease: "power4.out",
+          ease: "none",
         }
       });
       
