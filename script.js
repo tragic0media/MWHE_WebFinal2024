@@ -62,56 +62,52 @@ document.addEventListener("DOMContentLoaded", function () {
     const galleryFigcaption = gsap.utils.toArray(".descript");
     const galleryImages = gsap.utils.toArray(".parallax")
 
-    galleryFigures.forEach((figure) => {
-        const animation = gsap.to(figure, {
-            scrollTrigger: {
-                trigger: figure,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-                markers: true,
-                onUpdate: (self) => {
-                    const progress = self.progress;
+    ScrollTrigger.matchMedia({
+        "(max-width: 576px)": () => {
+            galleryFigures.forEach((figure) =>  {
+                const animation = gsap.fromTo(figure, { scale: 0.5, opacity: 0.4 }, {
+                    scale: 0.69,
+                    opacity: 1,
+                    ease: "none",
+                    paused: true,
+                    scrollTrigger: {
+                        trigger: figure,
+                        start: "top bottom",
+                        end: "bottom top",
+                        toggleActions: "play reverse play reverse",
+                        scrub: 1,
+                    },
+                });
+                figure.animation = animation;
+            });
+        },
 
-                    let scaleStart = 1;
-                    let yPosition = 45;
+        "(min-width: 577px)": () => {
+            galleryFigures.forEach((figure) => {
+                const animation = gsap.fromTo(figure, { scale: 0.85, opacity: 0.4 }, {
+                    scale: 1,
+                    opacity: 1,
+                    ease: "none",
+                    paused: true,
+                    scrollTrigger: {
+                        trigger: figure,
+                        start: "top bottom",
+                        end: "bottom top",
+                        toggleActions: "play reverse play reverse",
+                        markers: true,
+                        scrub: 1,
+                    },
+                });
 
-                    ScrollTrigger.matchMedia({
-                        "(max-width: 576px)": () => {
-                            scaleStart = 0.5;
-                            yPosition = 75;
-                        },
-                    });
-    
-                    const scale = gsap.utils.interpolate(scaleStart, 0.75, progress);
-                    const opacity = gsap.utils.interpolate(1, 0.7, progress);
-    
+                figure.addEventListener("mouseenter", () => {
                     gsap.to(figure, {
-                        scale: scale,
-                        opacity: opacity,
-                        y: yPosition,
-                        duration: 0.2,
-                        overwrite: "auto",
+                        opacity: 1,
+                        ease: "power1.in"
                     });
-
-                    figure.addEventListener("mouseenter", () => {
-                        gsap.to(figure, {
-                            opacity: 1,
-                            ease: "power1.out"
-                        });
-                    });
-                
-                    figure.addEventListener("mouseleave", () => {
-                        gsap.to(figure, {
-                            opacity: opacity,
-                            ease: "power1.in"
-                        });
-                    });
-                },
-            },
-        });
-    
-        figure.animation = animation;
+                });
+                figure.animation = animation;
+            });
+        }
     });
     
     window.addEventListener("resize", () => {
@@ -123,24 +119,33 @@ document.addEventListener("DOMContentLoaded", function () {
         ScrollTrigger.refresh();
     });
 
-    galleryFigcaption.forEach((figcaption) => {
-        gsap.to(figcaption, {
-            y: 5,
-            scrollTrigger: {
-                trigger: figcaption,
-                start: "top 80%",
-                end: "bottom 30%",
-                onUpdate: (self) => {
-                    const progress = self.progress;
-                    const scale = gsap.utils.interpolate(1, 0.9, progress);
-                    gsap.to(figcaption, {
-                        scale: scale,
-                        duration: 0.2,
-                        overwrite: "auto",
-                    });
-                },
-            }
-        });
+    ScrollTrigger.matchMedia({
+        "(max-width: 576px)": () => {
+            galleryFigcaption.forEach((figcaption) => {
+                gsap.to(figcaption, {
+                    y: -110,
+                    scrollTrigger: {
+                        trigger: figcaption,
+                        start: "top bottom",
+                        end: "bottom 85%",
+                        scrub: 1,
+                    }
+                });
+            });
+        },
+        "(min-width: 577px)": () => {
+            galleryFigcaption.forEach((figcaption) => {
+                gsap.to(figcaption, {
+                    y: -85,
+                    scrollTrigger: {
+                        trigger: figcaption,
+                        start: "top 60%",
+                        end: "bottom top",
+                        scrub: 2,
+                    }
+                });
+            });
+        }
     });
 
     galleryImages.forEach((image) => {

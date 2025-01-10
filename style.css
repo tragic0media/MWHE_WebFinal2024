@@ -423,7 +423,6 @@ img .vi {
     overflow: hidden;
     border-radius: 15px;
     border: 0.2vw solid var(--black);
-    opacity: 0;
     transition: all 0.2s;
 }
 
