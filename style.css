@@ -572,9 +572,6 @@ img .vi {
     height: inherit;
 }
 
-.arrow {
-    width: 20px;
-}
 
 @media (max-width: 992px) {
     #RotateOR {
@@ -595,7 +592,7 @@ img .vi {
     .artist-list-text-wrapper:first-child {
         margin-left: 40vw;
     }
-    .artist-list-text-wrapper {
+    .artist-list-text-wrapper p {
         text-align: left;
     }
 }
