@@ -105,15 +105,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
     });
-
-    gsap.from(".logo-png", {
-        y: 150,
-        scrollTrigger: {
-            trigger: ".contact_us",
-            start: "top bottom",
-            end: "top top",
-            scrub: 0.5,
-            ease: "none"
-        },
-    });
 });
