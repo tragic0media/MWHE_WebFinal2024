@@ -81,6 +81,7 @@ canvas {
     pointer-events: none;
 }
 
+/* About us */
 .cards {
     position: relative;
     height: 100vh;
@@ -97,13 +98,13 @@ canvas {
     top: 0;
     left: 0;
     border-radius: 15px;
-    border: 2px solid var(--black);
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
     margin-bottom: 50px;
 }
 
 .card1 {
     background: #e2e2e2;
+    border: 2px solid var(--black);
 }
 
 .card1 h1 {
