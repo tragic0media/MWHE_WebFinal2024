@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 start: "top bottom",
                 end: "bottom top",
                 scrub: 1,
-                // markers: true,
+                markers: true,
                 onUpdate: (self) => {
                     const progress = self.progress;
 

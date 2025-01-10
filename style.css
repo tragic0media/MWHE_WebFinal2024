@@ -333,15 +333,6 @@ img .vi {
     opacity: 0.5;
 }
 
-.img-n {
-    transform: scale(1.005);
-    transition: transform 1.2s cubic-bezier(0.5, 0.05, 0.42, 1);
-}
-
-.img-n:hover {
-    transform: scale(1.05);
-}
-
 .number {
     position: absolute;
     top: 0;
@@ -542,6 +533,7 @@ img .vi {
 
 .ko {
     height: 100vh;
+    height: 100dvh;
     width: 100vw;
     visibility: visible;
     transition: visibility 0.8s ease-in;
@@ -549,6 +541,7 @@ img .vi {
 
 .contenido-scroll {
     height: 100vh;
+    height: 100dvh;
     width: 100vw;
     background-color: var(--orange);
     opacity: 1;
