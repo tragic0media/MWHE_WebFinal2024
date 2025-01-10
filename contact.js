@@ -4,9 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Inicializar Lenis.js para scroll suave
     const lenis = new Lenis({
-        smooth: true,
-        smoothWheel: true,
-        wheelMultiplier: 0.8,
+        wheelMultiplier: 0.7
     });
 
     function raf(time) {
@@ -105,5 +103,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 ease: "power2.out",
             }
         );
+    });
+
+    gsap.from(".logo-png", {
+        y: 150,
+        scrollTrigger: {
+            trigger: ".contact_us",
+            start: "top bottom",
+            end: "top top",
+            scrub: 0.5,
+            ease: "none"
+        },
     });
 });
