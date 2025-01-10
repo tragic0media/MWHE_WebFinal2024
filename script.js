@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const content = document.querySelector(".content");
 
     lenisHeader = new Lenis({
-        lerp: 0.08,
-        wheelMultiplier: 0.95,
+        lerp: 0.1,
+        wheelMultiplier: 0.9,
         touchMultiplier: 0.9
     });
 
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         start: "top bottom",
                         end: "bottom top",
                         toggleActions: "play reverse play reverse",
-                        scrub: 1,
+                        scrub: true,
                     },
                 });
 
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
           trigger: ".cards",
           start: "top top",
           end: "+=1000",
-          scrub: 2,
+          scrub: 1,
           pin: true,
           pinSpacing: true,
           ease: "power4.out",
