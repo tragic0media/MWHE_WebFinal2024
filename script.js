@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         start: "top bottom",
                         end: "bottom top",
                         toggleActions: "play reverse play reverse",
-                        markers: true,
                         scrub: 1,
                     },
                 });
