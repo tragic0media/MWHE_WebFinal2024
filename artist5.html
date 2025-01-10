@@ -100,39 +100,39 @@
         
         <!-- Item Vertical Destacado -->
         <div class="gallery-item vertical medium">
-            <img src="images\artist5\10.png" alt="Imagen Cuadrada">
+            <img src="images\artist5\10.webp" alt="Imagen Cuadrada">
             <div class="gallery-text">LAS QUILAS</div>
         </div>
 
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
-            <img src="images\artist5\9.png" alt="Imagen Cuadrada">
+            <img src="images\artist5\9.webp" alt="Imagen Cuadrada">
             <div class="gallery-text">ESPORAS</div>
         </div>
 
 
         <!-- Item Horizontal -->
         <div class="gallery-item horizontal">
-            <img src="images\artist5\6.png" alt="Imagen Horizontal">
+            <img src="images\artist5\6.webp" alt="Imagen Horizontal">
             <div class="gallery-text">LA FUNGA</div>
         </div>
 
         <!-- Item Vertical -->
         <div class="gallery-item vertical">
-            <img src="images\artist5\7.png" alt="Imagen Vertical">
+            <img src="images\artist5\7.webp" alt="Imagen Vertical">
             <div class="gallery-text">ESPORAS</div>
         </div>
 
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
-            <img src="images\artist5\8.png" alt="Imagen Cuadrada">
+            <img src="images\artist5\8.webp" alt="Imagen Cuadrada">
             <div class="gallery-text">ESPORAS</div>
         </div>
 
         <!-- Item Horizontal Destacado -->
         <div class="gallery-item horizontal medium">
             <video autoplay muted loop playsinline>
-                <source src="images\artist5\2.mp4" type="video/mp4">
+                <source src="images\artist5\2.webm" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
             <div class="gallery-text">Kowküleno</div>
@@ -140,13 +140,13 @@
 
         <!-- Item Vertical -->
         <div class="gallery-item vertical">
-            <img src="images\artist5\4.png" alt="Imagen Cuadrada">
+            <img src="images\artist5\4.webp" alt="Imagen Cuadrada">
             <div class="gallery-text">PALABRAS A LAS AGUAS</div>
         </div>
 
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
-            <img src="images\artist5\5.png" alt="Imagen Cuadrada">
+            <img src="images\artist5\5.webp" alt="Imagen Cuadrada">
             <div class="gallery-text">PALABRAS A LAS AGUAS</div>
         </div>
     </div>
@@ -198,7 +198,7 @@
                 </div>
 
                 <!-- Links legales -->
-                <div class="col d-flex flex-column align-items-end footer-section">
+                <div class="col d-flex flex-column align-items-end footer-section legals">
                     <a href="#">Aviso legal</a>
                     <a href="#">Política de cookies</a>
                     <a href="#">Política de privacidad</a>
@@ -281,10 +281,6 @@
                 from: "random",
             } }, "+=0.2");
 
-        gsap.from(".video-container", { z: -500, rotationX: 60, transformOrigin: "bottom bottom", scrollTrigger: {
-                trigger: ".video-container", scrub: 4, start: "top bottom", end: "bottom bottom", once: true, ease: "power2.inOut" }} );
-          
-
         gsap.fromTo(
             ".gallery-item",
             { scale: 0.5, opacity: 0, rotate: () => gsap.utils.random(-10, 10)},
@@ -293,15 +289,14 @@
             opacity: 1,
             rotate: "0deg",
             ease: "power4.out",
-            duration: 1.2,
+            duration: 1.5,
             stagger: {
-                each: 0.9,
+                each: 1,
                 grid: [1, 4],
                 from: "random",
             },
             scrollTrigger: {
                 trigger: ".gallery-item",
-                scrub: 3,
                 start: "top 95%",
                 end: "top center",
             }

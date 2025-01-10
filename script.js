@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "(max-width: 576px)": () => {
             galleryFigures.forEach((figure) =>  {
                 const animation = gsap.fromTo(figure, { scale: 0.5, opacity: 0.4 }, {
-                    scale: 0.69,
+                    scale: 0.7,
                     opacity: 1,
                     ease: "none",
                     paused: true,
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 figure.addEventListener("mouseenter", () => {
                     gsap.to(figure, {
                         opacity: 1,
-                        ease: "power1.in"
+                        ease: "none"
                     });
                 });
                 figure.animation = animation;
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tlOne = gsap.timeline({ paused: true });
 
     tlOne.fromTo(img, { y: 0 },
-        { y: "100vh",
+        { y: "48vh",
         duration: 1.5,
         ease: "none" }, 0);
 
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrub: true,
     });
 
-    let tl3 = gsap.timeline({
+    let tl2 = gsap.timeline({
         scrollTrigger: {
           trigger: ".cards",
           start: "top top",
@@ -224,17 +224,18 @@ document.addEventListener("DOMContentLoaded", function () {
           scrub: 2,
           pin: true,
           pinSpacing: true,
-          ease: "power4.out"
+          ease: "power4.out",
+          markers: true
         }
       });
       
-      tl3.from(".card1", {
-        yPercent: 100,
+      tl2.from(".card1", {
+        yPercent: 50,
         scale: 0.8,
         opacity: 0.5,
       });
 
-      tl3.from(".card2", {
+      tl2.from(".card2", {
         yPercent: 100,
         scale: 0.8,
         opacity: 0.5,

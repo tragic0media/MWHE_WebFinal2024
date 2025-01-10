@@ -85,7 +85,7 @@
 <section class="video-banner" data-scroll-section>
     <div class="video-container">
         <video autoplay muted loop playsinline>
-            <source src="images\artist3\Composition-1 (1).mp4" type="video/mp4">
+            <source src="images\artist3\Composition-1.mp4" type="video/mp4">
             Tu navegador no soporta el elemento de video.
         </video>
     </div>
@@ -105,14 +105,14 @@
         
         <!-- Item Vertical Destacado -->
         <div class="gallery-item vertical medium byn">
-            <img src="images\artist3\3.png" alt="">
+            <img src="images\artist3\3.webp" alt="">
             <div class="gallery-text">FISHER</div>
         </div>
 
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
             <video autoplay muted loop playsinline>
-                <source src="images\artist3\C2.mp4" type="video/mp4">
+                <source src="images\artist3\C2.webm" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
             <div class="gallery-text">ROYAL ENFIELD</div>
@@ -121,26 +121,26 @@
 
         <!-- Item Horizontal -->
         <div class="gallery-item horizontal">
-            <img src="images\artist3\1.png" alt="Imagen Horizontal">
+            <img src="images\artist3\1.webp" alt="Imagen Horizontal">
             <div class="gallery-text">OAKLEY</div>
         </div>
 
         <!-- Item Vertical -->
         <div class="gallery-item vertical">
-            <img src="images\artist3\2.png" alt="Imagen Vertical">
+            <img src="images\artist3\2.webp" alt="Imagen Vertical">
             <div class="gallery-text">BRAND WHORE MAG</div>
         </div>
 
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
-            <img src="images\artist3\4.png" alt="Imagen Cuadrada">
+            <img src="images\artist3\4.webp" alt="Imagen Cuadrada">
             <div class="gallery-text">FISHER</div>
         </div>
 
         <!-- Item Horizontal Destacado -->
         <div class="gallery-item horizontal medium byn">
             <video autoplay muted loop playsinline>
-                <source src="images\artist3\vid2.mp4" type="video/mp4">
+                <source src="images\artist3\vid2.webm" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
             <div class="gallery-text">SHOWREEL</div>
@@ -158,7 +158,7 @@
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
             <video autoplay muted loop playsinline>
-                <source src="images\artist3\vid4.mp4" type="video/mp4">
+                <source src="images\artist3\vid4.webm" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
             <div class="gallery-text">FACTOR</div>
@@ -212,7 +212,7 @@
                 </div>
 
                 <!-- Links legales -->
-                <div class="col d-flex flex-column align-items-end footer-section">
+                <div class="col d-flex flex-column align-items-end footer-section legals">
                     <a href="#">Aviso legal</a>
                     <a href="#">Política de cookies</a>
                     <a href="#">Política de privacidad</a>
@@ -295,7 +295,7 @@
                 from: "random",
             } }, "+=0.2");
 
-        gsap.from(".video-container", { z: -500, rotationX: 60, transformOrigin: "bottom bottom", scrollTrigger: {
+        gsap.from(".video-container", { z: -500, rotationX: 60, y: -100, transformOrigin: "bottom bottom", scrollTrigger: {
                 trigger: ".video-container", scrub: 4, start: "top bottom", end: "bottom bottom", once: true, ease: "power2.inOut" }} );
           
 
@@ -307,15 +307,14 @@
             opacity: 1,
             rotate: "0deg",
             ease: "power4.out",
-            duration: 1.2,
+            duration: 1,
             stagger: {
-                each: 0.9,
+                each: 0.7,
                 grid: [1, 4],
                 from: "random",
             },
             scrollTrigger: {
                 trigger: ".gallery-item",
-                scrub: 3,
                 start: "top 95%",
                 end: "top center",
             }

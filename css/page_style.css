@@ -21,7 +21,8 @@ a:hover {
 }
 
 /* -- BACKGROUND -- */
-.filter-noise {
+
+/* .filter-noise {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,7 +42,7 @@ a:hover {
         background: url(../images/nnnoise-2.svg);
         opacity: 1;
     }
-}
+} */
 
 .gradient {
     position: fixed;
@@ -140,6 +141,10 @@ footer h6 {
 
 .footer-email:hover{
     border: 2px solid #FF6D0B;
+}
+
+.legals a {
+    font-weight: 300;
 }
 
 @media (max-width: 880px) {

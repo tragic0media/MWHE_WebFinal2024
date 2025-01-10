@@ -86,7 +86,7 @@
     <div class="gallery-grid">
         <!-- Item Horizontal Destacado -->
         <div class="gallery-item horizontal medium">
-            <img src="images\artlist4\9.png" alt="">
+            <img src="images\artlist4\9.webp" alt="">
             <div class="gallery-text">2022</div>
         </div>
         
@@ -98,20 +98,20 @@
 
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
-            <img src="images\artlist4\4.png" alt="Imagen Cuadrada">
+            <img src="images\artlist4\4.webp" alt="Imagen Cuadrada">
             <div class="gallery-text">BLUE: contact line :RED</div>
         </div>
 
 
         <!-- Item Horizontal -->
         <div class="gallery-item horizontal">
-            <img src="images\artlist4\5.png" alt="Imagen Horizontal">
+            <img src="images\artlist4\5.webp" alt="Imagen Horizontal">
             <div class="gallery-text">2023</div>
         </div>
 
         <!-- Item Vertical -->
         <div class="gallery-item vertical">
-            <img src="images\artlist4\1.png" alt="Imagen Vertical">
+            <img src="images\artlist4\1.webp" alt="Imagen Vertical">
             <div class="gallery-text">Al final de tu cabello</div>
         </div>
 
@@ -123,7 +123,7 @@
 
         <!-- Item Horizontal Destacado -->
         <div class="gallery-item horizontal medium">
-            <img src="images\artlist4\2.png" alt="">
+            <img src="images\artlist4\2.webp" alt="">
             <div class="gallery-text">Al final de tu cabello</div>
         </div>
 
@@ -135,7 +135,7 @@
 
         <!-- Item Cuadrado -->
         <div class="gallery-item square">
-            <img src="C:\Users\Usuario\Documents\GitHub\MWHE_WebFinal2024\images\artlist4\7.png" alt="Imagen Cuadrada">
+            <img src="images/artlist4/7.png" alt="Imagen Cuadrada">
             <div class="gallery-text">KEEP IN TOUCH</div>
         </div>
     </div>
@@ -187,7 +187,7 @@
                 </div>
 
                 <!-- Links legales -->
-                <div class="col d-flex flex-column align-items-end footer-section">
+                <div class="col d-flex flex-column align-items-end footer-section legals">
                     <a href="#">Aviso legal</a>
                     <a href="#">Política de cookies</a>
                     <a href="#">Política de privacidad</a>
@@ -270,10 +270,6 @@
                 from: "random",
             } }, "+=0.2");
 
-        gsap.from(".video-container", { z: -500, rotationX: 60, transformOrigin: "bottom bottom", scrollTrigger: {
-                trigger: ".video-container", scrub: 4, start: "top bottom", end: "bottom bottom", once: true, ease: "power2.inOut" }} );
-          
-
         gsap.fromTo(
             ".gallery-item",
             { scale: 0.5, opacity: 0, rotate: () => gsap.utils.random(-10, 10)},
@@ -282,15 +278,14 @@
             opacity: 1,
             rotate: "0deg",
             ease: "power4.out",
-            duration: 1.2,
+            duration: 1.5,
             stagger: {
-                each: 0.9,
+                each: 1,
                 grid: [1, 4],
                 from: "random",
             },
             scrollTrigger: {
                 trigger: ".gallery-item",
-                scrub: 3,
                 start: "top 95%",
                 end: "top center",
             }

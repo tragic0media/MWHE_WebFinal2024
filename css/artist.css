@@ -21,6 +21,10 @@
     transform: scale(1.2);
     color: #FF6D0B;
 }
+/* 
+.bio, .nombre {
+    opacity: 0;
+} */
 
 .bio span {
     display: inline;
