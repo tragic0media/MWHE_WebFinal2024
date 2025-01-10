@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Inicializar Lenis.js para scroll suave
     const lenis = new Lenis({
-        wheelMultiplier: 0.7
+        wheelMultiplier: 0.7,
+        duration: 1.2
     });
 
     function raf(time) {
