@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".cards",
           start: "top top",
-          end: "+=1000",
+          end: "+=1500",
           scrub: 1.5,
           pin: true,
           pinSpacing: true,
